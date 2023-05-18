@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://drevymbd85t03"]
+
+[ext_resource type="PackedScene" uid="uid://c2wu44uh041hc" path="res://Assets/Characters/Garbage_Person.tscn" id="1_2jofb"]
+
+[node name="Game_Level" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_2jofb")]
+position = Vector2(10, 24)
