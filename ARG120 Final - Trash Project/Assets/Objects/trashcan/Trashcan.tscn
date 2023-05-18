@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://10wsriupawlg"]
+
+[ext_resource type="Script" path="res://Assets/Objects/trashcan/Trashcan.gd" id="1_njny8"]
+[ext_resource type="Texture2D" uid="uid://yj5tofewxltf" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="2_imr3y"]
+[ext_resource type="PackedScene" path="res://assets/objects/bar/bar.tscn" id="3_wkbka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73wkr"]
+size = Vector2(16, 8.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvkpf"]
+resource_local_to_scene = true
+radius = 34.0
+
+[node name="Trashcan" type="RigidBody2D" groups=["Trashcan"]]
+z_index = 5
+lock_rotation = true
+freeze = true
+script = ExtResource("1_njny8")
+starting_capacity = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_imr3y")
+hframes = 5
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_73wkr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dvkpf")
+
+[node name="Bar" parent="." instance=ExtResource("3_wkbka")]
+offset_left = -15.0
+offset_top = -16.0
+offset_right = -15.0
+offset_bottom = -16.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
