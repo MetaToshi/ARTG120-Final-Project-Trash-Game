@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 @export var starting_direction : Vector2 = Vector2(0,1);
+
+#vars for trash cans available for placement
+@export var currently_available_cans : int = 5;
+@export var max_available_cans : int = 5;
+
 # parameters/Idle/blend_position
 
 @onready var animation_tree = $AnimationTree
@@ -45,8 +50,16 @@ func _ready():
 signal trash_updated(current_trash);
 signal trash_full()
 
+func get_cans():
+	return currently_available_cans;
+
 func get_trash():
 	return current_trash;
+
+func place_can():
+	currently_available_cans = currently_available_cans - 1;
+
+
 
 func _set_trash(val):
 	var prev = current_trash;
