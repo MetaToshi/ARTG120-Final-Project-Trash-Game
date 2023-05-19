@@ -12,11 +12,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_pressed("place"):
-		spawner()
-		print(player.get_cans())
+	pass
 		
 
+#Input runs on keydown events (or something like that)
+# Only runs once when an input is detected
+func _input(event):
+	if event.is_action_pressed("place"):
+		spawner()
+		print(player.get_cans())
 
 func spawner():
 	#print("test")

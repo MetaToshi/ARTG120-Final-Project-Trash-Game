@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dwvmnrlq358vt" path="res://TestingAssets/TestPlayer/player_cat.tscn" id="1_5j8cx"]
 [ext_resource type="Script" path="res://TestingAssets/TestingScenes/test_scene.gd" id="1_wu21h"]
 [ext_resource type="Texture2D" uid="uid://b6dhxalj1vbyc" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Grass.png" id="2_ocxk6"]
-[ext_resource type="PackedScene" uid="uid://10wsriupawlg" path="res://Assets/objects/trashcan/Trashcan.tscn" id="3_jb1va"]
-[ext_resource type="PackedScene" uid="uid://cdiab8fosdyvl" path="res://Assets/objects/dumpcan/dump.tscn" id="4_u2wcc"]
+[ext_resource type="PackedScene" uid="uid://10wsriupawlg" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="3_jb1va"]
+[ext_resource type="PackedScene" uid="uid://cdiab8fosdyvl" path="res://Assets/Objects/dumpcan/dump.tscn" id="4_u2wcc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtwjw"]
 texture = ExtResource("2_ocxk6")
