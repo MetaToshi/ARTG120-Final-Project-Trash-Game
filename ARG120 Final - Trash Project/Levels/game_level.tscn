@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c2wu44uh041hc" path="res://Assets/Characters/Garbage_Person.tscn" id="1_2jofb"]
 [ext_resource type="Texture2D" uid="uid://35rbbs82dm2d" path="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="2_m41b3"]
-[ext_resource type="PackedScene" uid="uid://10wsriupawlg" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="3_dxbsy"]
+[ext_resource type="PackedScene" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="3_dxbsy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6debs"]
 texture = ExtResource("2_m41b3")

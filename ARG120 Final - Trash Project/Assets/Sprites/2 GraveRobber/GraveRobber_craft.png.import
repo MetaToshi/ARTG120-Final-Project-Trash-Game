@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn62o12326oak"
-path="res://.godot/imported/GraveRobber_craft.png-75ca8edc75e6a55ba20aed0e9f233335.ctex"
+path="res://.godot/imported/GraveRobber_craft.png-8337c6662a73923eb3024c3409ac5ec5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber_craft.png"
-dest_files=["res://.godot/imported/GraveRobber_craft.png-75ca8edc75e6a55ba20aed0e9f233335.ctex"]
+source_file="res://assets/Sprites/2 GraveRobber/GraveRobber_craft.png"
+dest_files=["res://.godot/imported/GraveRobber_craft.png-8337c6662a73923eb3024c3409ac5ec5.ctex"]
 
 [params]
 

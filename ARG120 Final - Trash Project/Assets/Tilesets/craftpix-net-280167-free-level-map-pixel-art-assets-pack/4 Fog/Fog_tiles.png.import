@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rstctdaxvjbi"
-path="res://.godot/imported/Fog_tiles.png-ad906a8ba615a8a79da0fe9d18bc6d51.ctex"
+path="res://.godot/imported/Fog_tiles.png-ad0ab4b2aa7548b0cb845660d5652410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/4 Fog/Fog_tiles.png"
-dest_files=["res://.godot/imported/Fog_tiles.png-ad906a8ba615a8a79da0fe9d18bc6d51.ctex"]
+source_file="res://assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/4 Fog/Fog_tiles.png"
+dest_files=["res://.godot/imported/Fog_tiles.png-ad0ab4b2aa7548b0cb845660d5652410.ctex"]
 
 [params]
 

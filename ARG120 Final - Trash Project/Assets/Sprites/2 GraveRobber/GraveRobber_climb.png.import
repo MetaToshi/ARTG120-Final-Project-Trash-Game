@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw1n18ef21d7i"
-path="res://.godot/imported/GraveRobber_climb.png-ba9383f0a3171fbb58aa0438a46ce837.ctex"
+path="res://.godot/imported/GraveRobber_climb.png-bf3b8168b0b61ee4249212154677e899.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber_climb.png"
-dest_files=["res://.godot/imported/GraveRobber_climb.png-ba9383f0a3171fbb58aa0438a46ce837.ctex"]
+source_file="res://assets/Sprites/2 GraveRobber/GraveRobber_climb.png"
+dest_files=["res://.godot/imported/GraveRobber_climb.png-bf3b8168b0b61ee4249212154677e899.ctex"]
 
 [params]
 

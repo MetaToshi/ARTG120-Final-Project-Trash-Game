@@ -18,16 +18,15 @@ extends Control
 
 func set_value_to(value):
 	bar_over.value = value;
+	bar_under.value = value;
 	_assign_color(value);
 	#update_tween.interpolate_value(bar_under, "value", bar_under.value, value, 0.4, Tween.TRANS_SINE, 0.4);
 	#update_tween.start();
 	
 	#temporary until the animation works
-	bar_under.value = value;
 	
 func _assign_color(value):
 	
-	#for some reason tint_progress doesnt exist
 	#bar_under.value(value)
 	if(value < bar_over.max_value * empty_breakpoint):
 		bar_over.tint_progress = near_empty_color;

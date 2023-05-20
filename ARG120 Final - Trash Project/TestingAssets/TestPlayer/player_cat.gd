@@ -140,3 +140,19 @@ func grab_trash_from_closest_can():
 		print("removing trash from can")
 		var removed = closest_trashcan.remove_trash(max_capacity - current_trash);
 		add_trash(removed);
+		
+
+func subtract_from_current_cans(val):
+	currently_available_cans -= val;
+
+func set_current_cans(val):
+	currently_available_cans = val;
+	
+func get_current_cans():
+	return currently_available_cans
+	
+func set_max_cans(val):
+	max_available_cans = val;
+	
+func get_max_cans():
+	return max_available_cans;

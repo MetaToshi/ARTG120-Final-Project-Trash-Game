@@ -28,5 +28,6 @@ func spawner():
 		var obj = preload("res://Assets/Objects/trashcan/Trashcan.tscn").instantiate()
 		obj.position = get_global_mouse_position()
 		add_child(obj)
+		player.subtract_from_current_cans(1);
 	#player.place_can();
 	

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bb1quqkdvosg8"
-path="res://.godot/imported/Cave_enter.png-5c10b4eeaf9791ffe4a2b0660a6cfdb7.ctex"
+path="res://.godot/imported/Cave_enter.png-9149f61faef527cc3a41345e3f540be3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Other/Cave_enter.png"
-dest_files=["res://.godot/imported/Cave_enter.png-5c10b4eeaf9791ffe4a2b0660a6cfdb7.ctex"]
+source_file="res://assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Other/Cave_enter.png"
+dest_files=["res://.godot/imported/Cave_enter.png-9149f61faef527cc3a41345e3f540be3.ctex"]
 
 [params]
 

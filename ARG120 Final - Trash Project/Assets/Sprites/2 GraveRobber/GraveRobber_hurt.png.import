@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctfw4ty7dsmxc"
-path="res://.godot/imported/GraveRobber_hurt.png-872faae848695382d051f8da3f5ea369.ctex"
+path="res://.godot/imported/GraveRobber_hurt.png-546eb36edc1be9b4845474cf938a03bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber_hurt.png"
-dest_files=["res://.godot/imported/GraveRobber_hurt.png-872faae848695382d051f8da3f5ea369.ctex"]
+source_file="res://assets/Sprites/2 GraveRobber/GraveRobber_hurt.png"
+dest_files=["res://.godot/imported/GraveRobber_hurt.png-546eb36edc1be9b4845474cf938a03bd.ctex"]
 
 [params]
 

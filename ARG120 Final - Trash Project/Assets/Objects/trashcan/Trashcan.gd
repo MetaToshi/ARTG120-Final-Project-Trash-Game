@@ -20,8 +20,8 @@ func get_trashcan():
 func _ready():
 	var a2d = $Area2D;
 	a2d.add_to_group("trashcan");
-	($Bar).set_value_to(current_capacity);
 	($Bar).set_max_value(max_capacity);
+	($Bar).set_value_to(current_capacity);
 	($Area2D/CollisionShape2D).shape.radius = full_radius;
 
 func _set_current_capacity(val):

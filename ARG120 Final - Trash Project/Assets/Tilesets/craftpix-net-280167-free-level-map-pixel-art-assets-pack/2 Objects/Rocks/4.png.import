@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://swvf58wuyowx"
-path="res://.godot/imported/4.png-0afba5f9e36d3df132e8c5315b7e6d88.ctex"
+path="res://.godot/imported/4.png-ef40dc0e163ee78801a3356bb4c4cbd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Rocks/4.png"
-dest_files=["res://.godot/imported/4.png-0afba5f9e36d3df132e8c5315b7e6d88.ctex"]
+source_file="res://assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Rocks/4.png"
+dest_files=["res://.godot/imported/4.png-ef40dc0e163ee78801a3356bb4c4cbd6.ctex"]
 
 [params]
 
