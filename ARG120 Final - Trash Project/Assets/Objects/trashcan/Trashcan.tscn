@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Objects/trashcan/Trashcan.gd" id="1_njny8"]
 [ext_resource type="Texture2D" uid="uid://yj5tofewxltf" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="2_imr3y"]
-[ext_resource type="PackedScene" uid="uid://dmgxx6ld7dnig" path="res://assets/objects/bar/bar.tscn" id="3_wkbka"]
+[ext_resource type="PackedScene" path="res://assets/objects/bar/bar.tscn" id="3_wkbka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73wkr"]
 size = Vector2(16, 8.5)

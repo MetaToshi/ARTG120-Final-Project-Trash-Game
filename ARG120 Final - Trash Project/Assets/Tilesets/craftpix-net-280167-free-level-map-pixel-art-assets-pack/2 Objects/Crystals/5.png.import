@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d333b1va8t4yb"
-path="res://.godot/imported/5.png-71a304dc58184089d698cb601a2137cc.ctex"
+path="res://.godot/imported/5.png-145b659446e042a4873833b5e5a10aab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Crystals/5.png"
-dest_files=["res://.godot/imported/5.png-71a304dc58184089d698cb601a2137cc.ctex"]
+source_file="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Crystals/5.png"
+dest_files=["res://.godot/imported/5.png-145b659446e042a4873833b5e5a10aab.ctex"]
 
 [params]
 
