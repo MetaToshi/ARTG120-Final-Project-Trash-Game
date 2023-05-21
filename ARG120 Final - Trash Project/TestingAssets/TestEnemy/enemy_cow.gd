@@ -37,3 +37,10 @@ func _physics_process(_delta):
 		sprite.flip_h = false
 		
 	move_and_slide()
+	var collision = 0
+	for i in get_slide_collision_count():
+		collision += 1
+	if collision > 0:
+		queue_free()
+		collision = 0
+	
