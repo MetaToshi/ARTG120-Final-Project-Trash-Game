@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://oaldl2yyqnyl"]
+[gd_scene load_steps=13 format=3 uid="uid://oaldl2yyqnyl"]
 
 [ext_resource type="PackedScene" uid="uid://dwvmnrlq358vt" path="res://TestingAssets/TestPlayer/player_cat.tscn" id="1_5j8cx"]
 [ext_resource type="Script" path="res://TestingAssets/TestingScenes/test_scene.gd" id="1_wu21h"]
 [ext_resource type="Texture2D" uid="uid://b6dhxalj1vbyc" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Grass.png" id="2_ocxk6"]
 [ext_resource type="PackedScene" uid="uid://10wsriupawlg" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="3_jb1va"]
 [ext_resource type="PackedScene" uid="uid://cdiab8fosdyvl" path="res://Assets/Objects/dumpcan/dump.tscn" id="4_u2wcc"]
+[ext_resource type="PackedScene" uid="uid://bwx3k8lc01al8" path="res://TestingAssets/TestEnemy/enemy_cow.tscn" id="6_k46th"]
+[ext_resource type="Script" path="res://TestingAssets/TestingScenes/EnemySpawner.gd" id="7_aiv8m"]
+[ext_resource type="Script" path="res://TestingAssets/TestEnemy/spawnerinfo.gd" id="8_4vfyt"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_i4o1r"]
+vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtwjw"]
 texture = ExtResource("2_ocxk6")
@@ -83,13 +91,24 @@ texture = ExtResource("2_ocxk6")
 [sub_resource type="TileSet" id="TileSet_q8idi"]
 sources/0 = SubResource("TileSetAtlasSource_jtwjw")
 
+[sub_resource type="Resource" id="Resource_bvyt5"]
+script = ExtResource("8_4vfyt")
+time_start = 1
+time_end = 60
+enemy = ExtResource("6_k46th")
+enemy_num = 1
+enemy_spawn_delay = 1
+
 [node name="level1_test" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_wu21h")
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_i4o1r")
+
 [node name="PlayerCat" parent="." instance=ExtResource("1_5j8cx")]
 z_index = 5
-position = Vector2(56, 36)
+position = Vector2(-4, 42)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
@@ -108,13 +127,27 @@ layer_1/z_index = -5
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(56, 36)
+position = Vector2(-4, 42)
+zoom = Vector2(0.2, 0.2)
 
 [node name="Trashcan" parent="." instance=ExtResource("3_jb1va")]
-position = Vector2(76, 32)
+position = Vector2(96, 66)
 
 [node name="Trashcan2" parent="." instance=ExtResource("3_jb1va")]
 position = Vector2(119, 32)
 
 [node name="Dump" parent="." instance=ExtResource("4_u2wcc")]
-position = Vector2(42, 124)
+position = Vector2(259, 117)
+
+[node name="EnemyCow" parent="." node_paths=PackedStringArray("movement_target") instance=ExtResource("6_k46th")]
+position = Vector2(82, -35)
+movement_target = NodePath("../Dump")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("7_aiv8m")
+spawns = Array[ExtResource("8_4vfyt")]([SubResource("Resource_bvyt5")])
+
+[node name="Timer" type="Timer" parent="EnemySpawner"]
+autostart = true
+
+[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

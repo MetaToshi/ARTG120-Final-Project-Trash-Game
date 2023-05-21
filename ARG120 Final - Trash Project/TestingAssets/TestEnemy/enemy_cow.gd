@@ -13,14 +13,10 @@ func _ready():
 	
 func actor_setup():
 	await get_tree().physics_frame
-
-	
 	navigation_agent.target_position = Vector2(get_tree().get_first_node_in_group("dump").position.x,get_tree().get_first_node_in_group("dump").position.y)
 	
 @onready var animation_tree = $AnimationTree
 @onready var sprite = $Sprite2D
-
-var move_direction : Vector2 = Vector2.ZERO
 
 
 func _physics_process(_delta):
@@ -29,8 +25,6 @@ func _physics_process(_delta):
 	
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-	
-		
 	var new_velocity: Vector2 = next_path_position - current_agent_position
 	new_velocity = new_velocity.normalized()
 	new_velocity = new_velocity * move_speed
