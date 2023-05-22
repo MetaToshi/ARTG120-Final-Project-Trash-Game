@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7uv15u5aqvdr"
-path="res://.godot/imported/GraveRobber_idle.png-df68a7c3c02bd16f1f72d9c4257bb287.ctex"
+path="res://.godot/imported/GraveRobber_idle.png-8bb8c17b48abac2e1f751a87d1f0cb0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/2 GraveRobber/GraveRobber_idle.png"
-dest_files=["res://.godot/imported/GraveRobber_idle.png-df68a7c3c02bd16f1f72d9c4257bb287.ctex"]
+source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber_idle.png"
+dest_files=["res://.godot/imported/GraveRobber_idle.png-8bb8c17b48abac2e1f751a87d1f0cb0f.ctex"]
 
 [params]
 

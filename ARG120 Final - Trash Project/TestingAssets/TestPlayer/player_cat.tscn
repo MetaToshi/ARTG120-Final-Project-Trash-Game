@@ -271,9 +271,9 @@ parameters/Walk/blend_position = Vector2(-0.268505, 0.235371)
 [node name="Bar" parent="." instance=ExtResource("3_mnml5")]
 z_index = 5
 offset_left = -15.0
-offset_top = -26.0
+offset_top = -23.0
 offset_right = -15.0
-offset_bottom = -26.0
+offset_bottom = -23.0
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
@@ -283,6 +283,6 @@ shape = SubResource("CapsuleShape2D_dpjs2")
 
 [node name="Remaining_Cans_Number" parent="." instance=ExtResource("4_588re")]
 offset_left = -13.0
-offset_top = -27.0
+offset_top = -24.0
 offset_right = -13.0
-offset_bottom = -27.0
+offset_bottom = -24.0

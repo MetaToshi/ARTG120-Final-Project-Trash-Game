@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wtokrq6p2jft"
-path="res://.godot/imported/r1.png-c8d6a32bae4fa1c24220458bfb9208e5.ctex"
+path="res://.godot/imported/r1.png-5fe5f88524c867c3205ce08849fcbe1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r1.png"
-dest_files=["res://.godot/imported/r1.png-c8d6a32bae4fa1c24220458bfb9208e5.ctex"]
+source_file="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r1.png"
+dest_files=["res://.godot/imported/r1.png-5fe5f88524c867c3205ce08849fcbe1a.ctex"]
 
 [params]
 

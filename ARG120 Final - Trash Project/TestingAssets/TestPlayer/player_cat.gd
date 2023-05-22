@@ -177,6 +177,8 @@ func _input(event):
 		find_closest_can(true)
 		print("--------------------------------")
 		grab_trash_from_closest_can();
+	if(event.is_action_pressed("pickup_can")): 
+		pickup_empty_can();
 
 
 
@@ -195,6 +197,17 @@ func grab_trash_from_closest_can():
 		if(closest_trashcan.get_current_capacity() == 0):
 			closest_trashcan = null;
 		
+		
+func pickup_empty_can():
+	find_closest_can(false);
+	if(closest_trashcan != null && closest_trashcan.is_in_group("dump") == false && closest_trashcan.current_capacity == 0):
+		get_parent().remove_child(closest_trashcan);
+		closest_trashcan = null;
+		set_current_cans(currently_available_cans+1);
+
+
+
+
 
 func subtract_from_current_cans(val):
 	currently_available_cans -= val;
