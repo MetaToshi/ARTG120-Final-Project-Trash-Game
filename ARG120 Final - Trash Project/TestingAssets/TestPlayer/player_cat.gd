@@ -43,6 +43,7 @@ func _ready():
 	animation_tree.set("parameters/Idle/blend_positiona", starting_direction)
 	($Bar).set_max_value(max_capacity)
 	($Bar).set_value_to(current_trash)
+	set_can_frame()
 	
 @export var max_capacity : int = 5;
 @onready var current_trash : int = 0;
@@ -66,8 +67,10 @@ func get_trash():
 
 func place_can():
 	currently_available_cans = currently_available_cans - 1;
+	set_can_frame()
 
-
+func set_can_frame():
+	($Remaining_Cans_Number).set_frame(currently_available_cans)
 
 func _set_trash(val):
 	var prev = current_trash;
@@ -195,9 +198,11 @@ func grab_trash_from_closest_can():
 
 func subtract_from_current_cans(val):
 	currently_available_cans -= val;
+	set_can_frame()
 
 func set_current_cans(val):
 	currently_available_cans = val;
+	set_can_frame()
 	
 func get_current_cans():
 	return currently_available_cans

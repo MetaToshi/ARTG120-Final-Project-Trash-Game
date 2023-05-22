@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhp4c3migktr1"]
+
+[ext_resource type="Script" path="res://Assets/Objects/number_trash_icon/Remaining_Cans_Number.gd" id="1_n2lya"]
+[ext_resource type="Texture2D" uid="uid://fvgjbt1cbkc6" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Objects/chest_stack.png" id="2_c75fe"]
+
+[node name="Remaining_Cans_Number" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_n2lya")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(20, 0)
+texture = ExtResource("2_c75fe")
+vframes = 7
+frame = 1

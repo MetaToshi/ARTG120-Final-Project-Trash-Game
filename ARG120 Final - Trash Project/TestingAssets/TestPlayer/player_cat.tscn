@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://dwvmnrlq358vt"]
+[gd_scene load_steps=32 format=3 uid="uid://dwvmnrlq358vt"]
 
 [ext_resource type="Script" path="res://TestingAssets/TestPlayer/player_cat.gd" id="1_n3clx"]
 [ext_resource type="Texture2D" uid="uid://btrpjfeicmq3m" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_on4pi"]
-[ext_resource type="PackedScene" path="res://assets/objects/bar/bar.tscn" id="3_mnml5"]
+[ext_resource type="PackedScene" uid="uid://dmgxx6ld7dnig" path="res://assets/objects/bar/bar.tscn" id="3_mnml5"]
+[ext_resource type="PackedScene" uid="uid://bhp4c3migktr1" path="res://Assets/Objects/number_trash_icon/Remaining_Cans_Number.tscn" id="4_588re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1ygo"]
 size = Vector2(10, 6)
@@ -279,3 +280,9 @@ offset_bottom = -26.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_dpjs2")
+
+[node name="Remaining_Cans_Number" parent="." instance=ExtResource("4_588re")]
+offset_left = -13.0
+offset_top = -27.0
+offset_right = -13.0
+offset_bottom = -27.0
