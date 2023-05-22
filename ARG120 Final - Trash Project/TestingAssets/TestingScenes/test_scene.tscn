@@ -128,7 +128,6 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4, 42)
-zoom = Vector2(0.2, 0.2)
 
 [node name="Trashcan" parent="." instance=ExtResource("3_jb1va")]
 position = Vector2(96, 66)

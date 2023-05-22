@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjwf0uml8lqa0"
-path="res://.godot/imported/6.png-c5ed2cd802e54183b5731029ed70b433.ctex"
+path="res://.godot/imported/6.png-086a36e24cf293a76756968c05c1d647.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Bushes/6.png"
-dest_files=["res://.godot/imported/6.png-c5ed2cd802e54183b5731029ed70b433.ctex"]
+source_file="res://assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Bushes/6.png"
+dest_files=["res://.godot/imported/6.png-086a36e24cf293a76756968c05c1d647.ctex"]
 
 [params]
 

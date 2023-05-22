@@ -16,6 +16,12 @@ signal full();
 func get_trashcan():
 	var parent = ($Area2D).get_parent();
 	return parent;
+	
+func get_current_capacity():
+	return current_capacity;
+	
+func get_full_radius():
+	return full_radius;
 
 func _ready():
 	var a2d = $Area2D;

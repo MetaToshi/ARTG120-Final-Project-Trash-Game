@@ -47,6 +47,14 @@ func _ready():
 @export var max_capacity : int = 5;
 @onready var current_trash : int = 0;
 
+func set_max_capacity(val):
+	max_capacity = val;
+	($Bar).set_max_value(val);
+	($Bar).set_value_to(current_trash)
+	
+func get_max_capacity():
+	return max_capacity;
+
 signal trash_updated(current_trash);
 signal trash_full()
 
@@ -95,34 +103,77 @@ func collides():
 
 
 @onready var closest_trashcan = null;
+func set_closest_trashcan(val):
+	closest_trashcan = val;
+
+func get_closest_trashcan():
+	return closest_trashcan
 
 var total_near_trashcans = 0;
 var touched_trashcans = [];
-func _on_area_2d_area_entered(area):
+#func _on_area_2d_area_entered(area):
+#	
+#	if(area.is_in_group('trashcan')):
+#		total_near_trashcans+=1;
+#		closest_trashcan = area.get_parent();
+#		#Adding to nearby trashcans array
+#		print(closest_trashcan);
+#		touched_trashcans.append(area.get_parent());
+
+
+#func _on_area_2d_area_exited(area):
+#	if(area.is_in_group('trashcan')):
+#		total_near_trashcans-=1;
+#		delete_value(area.get_parent())
+#		if(total_near_trashcans == 0):
+#			closest_trashcan = null;
+#		else: 
+#			closest_trashcan = touched_trashcans[0];
+#		print(closest_trashcan);
+
+@export var pickup_range = 36;
+
+#Boolean is whether or not to not include empty cans, True == empty cans will not be included, false == empty cans WILL be included (Use for picking up empty cans)
+func find_closest_can(boolean):
+	var cans = get_parent().get_tree().get_nodes_in_group("trashcan");
+	#print(cans);
+	#print("finding can")
+	if(cans.size() == 0):
+		print("none")
+		return;
+	#print(cans[0].get_parent());
+	var changed = false;
+	var player = get_parent().get_node("PlayerCat");
+	#print(player);
+	for can in cans:
+		#print(can)
+		
+		#print("Capacity: ", can.get_parent().current_capacity);
+		if(boolean && (can.get_parent().current_capacity == 0) && (can.get_parent().is_in_group("dump")) == false):
+			continue;
+		#print("Looking:", can.get_parent())
+		#can.get_parent().global_position.distance_to(($PlayerCat).global_position)
+		if(can.get_parent().global_position.distance_to(player.global_position) < pickup_range):
+			if(player.get_closest_trashcan() == null):
+				changed = true;
+				#print("new close from null:", can.get_parent())
+				player.set_closest_trashcan(can.get_parent())
+			elif(can.get_parent().global_position.distance_to(player.global_position) <= player.get_closest_trashcan().global_position.distance_to(player.global_position)):
+				changed = true;
+				player.set_closest_trashcan(can.get_parent())
+				#print("new close override:", can.get_parent())
 	
-	if(area.is_in_group('trashcan')):
-		total_near_trashcans+=1;
-		closest_trashcan = area.get_parent();
-		#Adding to nearby trashcans array
-		print(closest_trashcan);
-		touched_trashcans.append(area.get_parent());
+	if(changed == false):
+		player.set_closest_trashcan(null)
+		#print("No nearby trashcans");
 
-
-func _on_area_2d_area_exited(area):
-	if(area.is_in_group('trashcan')):
-		total_near_trashcans-=1;
-		delete_value(area.get_parent())
-		if(total_near_trashcans == 0):
-			closest_trashcan = null;
-		else: 
-			closest_trashcan = touched_trashcans[0];
-		print(closest_trashcan);
 
 func delete_value(value):
 	touched_trashcans.erase(value);
 	
 func _input(event):
 	if(event.is_action_pressed("pickup_trash")):
+		find_closest_can(true)
 		print("--------------------------------")
 		grab_trash_from_closest_can();
 
@@ -140,6 +191,8 @@ func grab_trash_from_closest_can():
 		print("removing trash from can")
 		var removed = closest_trashcan.remove_trash(max_capacity - current_trash);
 		add_trash(removed);
+		if(closest_trashcan.get_current_capacity() == 0):
+			closest_trashcan = null;
 		
 
 func subtract_from_current_cans(val):

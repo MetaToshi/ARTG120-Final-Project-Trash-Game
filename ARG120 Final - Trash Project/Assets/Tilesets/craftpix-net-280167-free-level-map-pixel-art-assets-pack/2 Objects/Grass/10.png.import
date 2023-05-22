@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnsxgo7xr037a"
-path="res://.godot/imported/10.png-cce43a357cbb134cb52f8e8e007a688f.ctex"
+path="res://.godot/imported/10.png-cfef55ed05429b45c869db13fa532922.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/10.png"
-dest_files=["res://.godot/imported/10.png-cce43a357cbb134cb52f8e8e007a688f.ctex"]
+source_file="res://assets/Tilesets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/10.png"
+dest_files=["res://.godot/imported/10.png-cfef55ed05429b45c869db13fa532922.ctex"]
 
 [params]
 

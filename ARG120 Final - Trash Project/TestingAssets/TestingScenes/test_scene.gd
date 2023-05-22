@@ -31,3 +31,7 @@ func spawner():
 		player.subtract_from_current_cans(1);
 	#player.place_can();
 	
+
+	
+	#($PlayerCat).set_closest_trashcan(closest)
+	#print(($PlayerCat).get_closest_trashcan())
