@@ -179,8 +179,15 @@ func _input(event):
 		grab_trash_from_closest_can();
 	if(event.is_action_pressed("pickup_can")): 
 		pickup_empty_can();
-	if event.is_action_pressed("place"):
+		
+		
+		
+	if Input.is_action_just_pressed("place"):
+		show_hidden_trashcan();
+	if Input.is_action_just_released("place"):
+		hide_hidden_trashcan()
 		spawner()
+		
 		#print(player.get_cans())
 
 
@@ -215,6 +222,22 @@ func spawner():
 		obj.position = get_global_mouse_position()
 		get_parent().add_child(obj)
 		subtract_from_current_cans(1);
+		
+
+
+var current_hidden_trashcan = null;
+func show_hidden_trashcan():
+	if(current_hidden_trashcan != null):
+		hide_hidden_trashcan();
+
+	current_hidden_trashcan = preload("res://Assets/Objects/trashcan/faded trashcan/faded_trashcan.tscn").instantiate();
+	current_hidden_trashcan.position = get_global_mouse_position();
+	get_parent().add_child(current_hidden_trashcan);
+
+func hide_hidden_trashcan():
+	get_parent().remove_child(current_hidden_trashcan);
+	current_hidden_trashcan = null;
+	pass
 
 
 
