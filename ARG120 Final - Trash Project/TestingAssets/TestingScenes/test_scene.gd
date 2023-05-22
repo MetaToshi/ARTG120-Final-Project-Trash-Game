@@ -18,17 +18,21 @@ func _process(_delta):
 #Input runs on keydown events (or something like that)
 # Only runs once when an input is detected
 func _input(event):
-	if event.is_action_pressed("place"):
-		spawner()
-		print(player.get_cans())
+	pass
+	#if event.is_action_pressed("place"):
+		#spawner()
+		#print(player.get_cans())
 
-func spawner():
+
+#SPAWNER HAS BEEN MOVED TO BE INSIDE THE SCRIPT FOR THE PLAYER
+#func spawner():
 	#print("test")
-	if(player.get_cans() > 0):
-		var obj = preload("res://Assets/Objects/trashcan/Trashcan.tscn").instantiate()
-		obj.position = get_global_mouse_position()
-		add_child(obj)
-		player.subtract_from_current_cans(1);
+	#if(player.get_cans() > 0):
+		#var obj = preload("res://Assets/Objects/trashcan/Trashcan.tscn").instantiate()
+		#obj.position = get_global_mouse_position()
+		#add_child(obj)
+		#player.subtract_from_current_cans(1);
+		#pass
 	#player.place_can();
 	
 

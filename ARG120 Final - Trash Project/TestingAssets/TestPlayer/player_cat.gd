@@ -179,6 +179,9 @@ func _input(event):
 		grab_trash_from_closest_can();
 	if(event.is_action_pressed("pickup_can")): 
 		pickup_empty_can();
+	if event.is_action_pressed("place"):
+		spawner()
+		#print(player.get_cans())
 
 
 
@@ -205,7 +208,13 @@ func pickup_empty_can():
 		closest_trashcan = null;
 		set_current_cans(currently_available_cans+1);
 
-
+func spawner():
+	#print("test")
+	if(currently_available_cans > 0):
+		var obj = preload("res://Assets/Objects/trashcan/Trashcan.tscn").instantiate()
+		obj.position = get_global_mouse_position()
+		get_parent().add_child(obj)
+		subtract_from_current_cans(1);
 
 
 
