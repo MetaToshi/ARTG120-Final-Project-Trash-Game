@@ -136,33 +136,31 @@ var touched_trashcans = [];
 #Boolean is whether or not to not include empty cans, True == empty cans will not be included, false == empty cans WILL be included (Use for picking up empty cans)
 func find_closest_can(boolean):
 	var cans = get_parent().get_tree().get_nodes_in_group("trashcan");
-	#print(cans);
-	#print("finding can")
 	if(cans.size() == 0):
 		print("none")
 		return;
-	#print(cans[0].get_parent());
 	var changed = false;
 	var player = get_parent().get_node("PlayerCat");
-	#print(player);
 	for can in cans:
-		#print(can)
 		
-		#print("Capacity: ", can.get_parent().current_capacity);
+		#Checking if boolean option is enabled, if it is, then dont count the cans with 0 capacity (or the dump)
 		if(boolean && (can.get_parent().current_capacity == 0) && (can.get_parent().is_in_group("dump")) == false):
 			continue;
-		#print("Looking:", can.get_parent())
-		#can.get_parent().global_position.distance_to(($PlayerCat).global_position)
+		
+		#Check if the can is within the pickup range of the player
 		if(can.get_parent().global_position.distance_to(player.global_position) < pickup_range):
+			#If there is no closest trashcan, then this must be the closest trashcan in range
 			if(player.get_closest_trashcan() == null):
 				changed = true;
-				#print("new close from null:", can.get_parent())
+				
 				player.set_closest_trashcan(can.get_parent())
+			#If there is another trashcan, only overwrite the closest trashcan if it is closer than the other one
 			elif(can.get_parent().global_position.distance_to(player.global_position) <= player.get_closest_trashcan().global_position.distance_to(player.global_position)):
 				changed = true;
 				player.set_closest_trashcan(can.get_parent())
 				#print("new close override:", can.get_parent())
 	
+	#If no valuse are changed, there must be no nearby trashcan so set it to null
 	if(changed == false):
 		player.set_closest_trashcan(null)
 		#print("No nearby trashcans");
