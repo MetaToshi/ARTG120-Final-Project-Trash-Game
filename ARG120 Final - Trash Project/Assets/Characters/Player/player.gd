@@ -147,7 +147,7 @@ func find_closest_can(boolean):
 	for can in cans:
 		
 		#Checking if boolean option is enabled, if it is, then dont count the cans with 0 capacity (or the dump)
-		if(boolean && (can.get_parent().current_capacity == 0) && (can.get_parent().is_in_group("dump")) == false):
+		if(boolean && (can.get_parent().current_capacity == 0)):
 			continue;
 		
 		#Check if the can is within the pickup range of the player
@@ -162,11 +162,25 @@ func find_closest_can(boolean):
 				changed = true;
 				player.set_closest_trashcan(can.get_parent())
 				#print("new close override:", can.get_parent())
+		
+		if(can.get_parent().is_in_group("dump") && my_distance_to(can.get_parent().global_position, player.global_position) < pickup_range * 1.8):
+			if(player.get_closest_trashcan() == null):
+				changed = true;
+				
+				player.set_closest_trashcan(can.get_parent())
+			#If there is another trashcan, only overwrite the closest trashcan if it is closer than the other one
+			elif(can.get_parent().global_position.distance_to(player.global_position) <= player.get_closest_trashcan().global_position.distance_to(player.global_position)):
+				changed = true;
+				player.set_closest_trashcan(can.get_parent())
 	
 	#If no valuse are changed, there must be no nearby trashcan so set it to null
 	if(changed == false):
 		player.set_closest_trashcan(null)
 		#print("No nearby trashcans");
+
+#modified distance_to to reduce the weight of y values in hopes of getting a more "rectangular" shape
+func my_distance_to(a, b):
+	return sqrt(((b.x - a.x) * (b.x - a.x)) + ( (3 * ((b.y - a.y) * (b.y - a.y)))))
 
 
 func delete_value(value):

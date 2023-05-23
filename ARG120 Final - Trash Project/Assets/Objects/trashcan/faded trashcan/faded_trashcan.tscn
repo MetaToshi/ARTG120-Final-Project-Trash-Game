@@ -1,10 +1,9 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://b1acdgq3csnx8"]
 
-[ext_resource type="Texture2D" uid="uid://yj5tofewxltf" path="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="1_d78m8"]
 [ext_resource type="Script" path="res://Assets/Objects/trashcan/faded trashcan/faded_trashcan.gd" id="1_ffaxp"]
+[ext_resource type="Texture2D" uid="uid://ij4i1ntjjqpm" path="res://Assets/Sprites/Trashcan/isometric can.png" id="1_gysi7"]
 
 [node name="faded_trashcan" type="Sprite2D"]
-texture = ExtResource("1_d78m8")
-hframes = 5
-vframes = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_gysi7")
 script = ExtResource("1_ffaxp")

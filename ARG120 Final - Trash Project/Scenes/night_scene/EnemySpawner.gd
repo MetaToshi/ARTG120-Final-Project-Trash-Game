@@ -3,7 +3,7 @@ extends Node2D
 
 @export var spawns: Array[spawnerinfo] = []
 
-@onready var player = get_tree().get_first_node_in_group("dump")
+@onready var player = get_tree().get_first_node_in_group("city")
 
 var time = 0
 

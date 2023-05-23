@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=22 format=3 uid="uid://bd3gvkppixopc"]
 
 [ext_resource type="Script" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_cow.gd" id="1_cvq14"]
 [ext_resource type="Texture2D" uid="uid://b6m3x1e5d55je" path="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="1_gnngy"]
@@ -119,7 +119,7 @@ navigation_agent = NodePath("NavigationAgent2D")
 texture = ExtResource("1_gnngy")
 hframes = 3
 vframes = 2
-frame = 4
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.625, 8)

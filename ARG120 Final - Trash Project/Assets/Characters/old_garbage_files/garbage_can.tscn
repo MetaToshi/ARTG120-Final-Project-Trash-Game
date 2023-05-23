@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3]
 
-[ext_resource type="Texture2D" uid="uid://ij4i1ntjjqpm" path="res://Assets/Sprites/icons8-trash-100.png" id="1_e5mf5"]
+[ext_resource type="Texture2D" uid="uid://ij4i1ntjjqpm" path="res://Assets/Sprites/Trashcan/isometric can.png" id="1_e5mf5"]
 [ext_resource type="Script" path="res://Assets/Characters/old_garbage_files/garbage_can.gd" id="1_ig83b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_letaq"]

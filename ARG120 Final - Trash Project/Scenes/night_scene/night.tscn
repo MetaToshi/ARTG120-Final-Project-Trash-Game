@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=12 format=3 uid="uid://dy2og6f67dob2"]
 
 [ext_resource type="Script" path="res://Scenes/night_scene/night.gd" id="1_mhorq"]
-[ext_resource type="PackedScene" path="res://Assets/Characters/Player/player.tscn" id="2_b01mx"]
+[ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="2_b01mx"]
 [ext_resource type="Texture2D" uid="uid://b6dhxalj1vbyc" path="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Grass.png" id="3_ud1q8"]
-[ext_resource type="PackedScene" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="4_4piga"]
-[ext_resource type="PackedScene" path="res://Assets/Objects/dumpcan/dump.tscn" id="5_bcjyu"]
-[ext_resource type="PackedScene" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_cow.tscn" id="6_3rku3"]
-[ext_resource type="Script" path="res://Scenes/night_scene/EnemySpawner.gd" id="7_pwrpk"]
-[ext_resource type="Script" path="res://Assets/Characters/Enemies/Trash_Enemy/spawnerinfo.gd" id="8_lbw1f"]
+[ext_resource type="PackedScene" uid="uid://dvb7nvlcr25jf" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="4_4piga"]
+[ext_resource type="PackedScene" uid="uid://blcivkbvgbclg" path="res://Assets/Objects/dumpcan/dump.tscn" id="5_bcjyu"]
+[ext_resource type="PackedScene" uid="uid://bd3gvkppixopc" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_cow.tscn" id="6_3rku3"]
+[ext_resource type="PackedScene" uid="uid://b3eid382e1xbm" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_spawner.tscn" id="8_x1ak7"]
+[ext_resource type="PackedScene" uid="uid://b5wk3772n7272" path="res://Assets/Objects/city/City.tscn" id="9_qdia8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i4o1r"]
 vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
@@ -91,14 +91,6 @@ texture = ExtResource("3_ud1q8")
 [sub_resource type="TileSet" id="TileSet_q8idi"]
 sources/0 = SubResource("TileSetAtlasSource_jtwjw")
 
-[sub_resource type="Resource" id="Resource_bvyt5"]
-script = ExtResource("8_lbw1f")
-time_start = 1
-time_end = 60
-enemy = ExtResource("6_3rku3")
-enemy_num = 1
-enemy_spawn_delay = 1
-
 [node name="level1_test" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_mhorq")
@@ -108,7 +100,7 @@ navigation_polygon = SubResource("NavigationPolygon_i4o1r")
 
 [node name="PlayerCat" parent="." instance=ExtResource("2_b01mx")]
 z_index = 5
-position = Vector2(-4, 42)
+position = Vector2(-89, 79)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
@@ -127,26 +119,21 @@ layer_1/z_index = -5
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-4, 42)
+position = Vector2(-89, 79)
 
 [node name="Trashcan" parent="." instance=ExtResource("4_4piga")]
-position = Vector2(96, 66)
+position = Vector2(-160, -35)
 
 [node name="Trashcan2" parent="." instance=ExtResource("4_4piga")]
-position = Vector2(119, 32)
+position = Vector2(93, -60)
 
 [node name="Dump" parent="." instance=ExtResource("5_bcjyu")]
-position = Vector2(259, 117)
+position = Vector2(-145, 145)
 
 [node name="EnemyCow" parent="." node_paths=PackedStringArray("movement_target") instance=ExtResource("6_3rku3")]
-position = Vector2(82, -35)
+position = Vector2(165, -101)
 movement_target = NodePath("../Dump")
 
-[node name="EnemySpawner" type="Node2D" parent="."]
-script = ExtResource("7_pwrpk")
-spawns = Array[ExtResource("8_lbw1f")]([SubResource("Resource_bvyt5")])
+[node name="City" parent="." instance=ExtResource("9_qdia8")]
 
-[node name="Timer" type="Timer" parent="EnemySpawner"]
-autostart = true
-
-[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
+[node name="EnemySpawner" parent="." instance=ExtResource("8_x1ak7")]

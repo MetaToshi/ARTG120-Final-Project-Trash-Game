@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ij4i1ntjjqpm"
-path="res://.godot/imported/icons8-trash-100.png-fb5c315e79ef213197d668450f67c308.ctex"
+uid="uid://dek763fq0mbs3"
+path="res://.godot/imported/isometric city.png-2c7db1da603a1fcce7d9f8fcd8eb3695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/icons8-trash-100.png"
-dest_files=["res://.godot/imported/icons8-trash-100.png-fb5c315e79ef213197d668450f67c308.ctex"]
+source_file="res://Assets/Sprites/City/isometric city.png"
+dest_files=["res://.godot/imported/isometric city.png-2c7db1da603a1fcce7d9f8fcd8eb3695.ctex"]
 
 [params]
 

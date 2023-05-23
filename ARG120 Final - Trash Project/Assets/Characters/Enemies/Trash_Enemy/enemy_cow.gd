@@ -12,8 +12,9 @@ func _ready():
 	call_deferred("actor_setup")
 	
 func actor_setup():
-	await get_tree().physics_frame
-	navigation_agent.target_position = Vector2(get_tree().get_first_node_in_group("dump").position.x,get_tree().get_first_node_in_group("dump").position.y)
+	await get_tree().physics_frame;
+	var city = get_tree().get_first_node_in_group("city");
+	navigation_agent.target_position = Vector2(city.position.x,city.position.y)
 	
 @onready var animation_tree = $AnimationTree
 @onready var sprite = $Sprite2D

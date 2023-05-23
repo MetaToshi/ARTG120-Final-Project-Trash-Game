@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5wk3772n7272"]
+
+[ext_resource type="Script" path="res://Assets/Objects/city/City.gd" id="1_8ubjw"]
+[ext_resource type="Texture2D" uid="uid://dek763fq0mbs3" path="res://Assets/Sprites/City/isometric city.png" id="2_y15ns"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbuii"]
+radius = 37.2088
+
+[node name="City" type="RigidBody2D" groups=["city"]]
+freeze = true
+script = ExtResource("1_8ubjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.78571)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_lbuii")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_y15ns")
