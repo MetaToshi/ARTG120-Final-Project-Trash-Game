@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" uid="uid://do3yowrjau1oi" path="res://Assets/Sprites/2 GraveRobber/GraveRobber.png" id="1_3o8xf"]
+[ext_resource type="Script" path="res://Assets/Characters/old_garbage_files/Garbage_Person.gd" id="1_uv0tp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aptf1"]
+size = Vector2(16, 33)
+
+[node name="Garbage_Person" type="CharacterBody2D"]
+position = Vector2(3, -1)
+script = ExtResource("1_uv0tp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.979167, 1)
+texture = ExtResource("1_3o8xf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 7.5)
+shape = SubResource("RectangleShape2D_aptf1")

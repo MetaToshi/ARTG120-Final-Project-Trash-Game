@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc38jlygihffh"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Texture2D" uid="uid://yj5tofewxltf" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="1_d78m8"]
+[ext_resource type="Texture2D" uid="uid://yj5tofewxltf" path="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="1_d78m8"]
 [ext_resource type="Script" path="res://Assets/Objects/trashcan/faded trashcan/faded_trashcan.gd" id="1_ffaxp"]
 
 [node name="faded_trashcan" type="Sprite2D"]

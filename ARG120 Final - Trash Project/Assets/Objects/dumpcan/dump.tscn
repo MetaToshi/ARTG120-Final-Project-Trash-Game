@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdiab8fosdyvl"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://Assets/Objects/dumpcan/dump.gd" id="1_2be44"]
-[ext_resource type="Texture2D" uid="uid://yj5tofewxltf" path="res://TestingAssets/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="2_l2ud5"]
+[ext_resource type="Texture2D" uid="uid://yj5tofewxltf" path="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="2_l2ud5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73wkr"]
 size = Vector2(16, 8.5)
