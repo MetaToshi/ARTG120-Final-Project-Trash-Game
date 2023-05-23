@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctfw4ty7dsmxc"
-path="res://.godot/imported/GraveRobber_hurt.png-872faae848695382d051f8da3f5ea369.ctex"
+uid="uid://l2m3fvra3w7u"
+path="res://.godot/imported/Free Cow Sprites2.png-6b491eafb523543283895fab31300485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber_hurt.png"
-dest_files=["res://.godot/imported/GraveRobber_hurt.png-872faae848695382d051f8da3f5ea369.ctex"]
+source_file="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites2.png"
+dest_files=["res://.godot/imported/Free Cow Sprites2.png-6b491eafb523543283895fab31300485.ctex"]
 
 [params]
 

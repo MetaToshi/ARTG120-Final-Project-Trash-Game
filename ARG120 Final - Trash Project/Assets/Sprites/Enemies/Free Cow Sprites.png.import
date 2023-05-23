@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7uv15u5aqvdr"
-path="res://.godot/imported/GraveRobber_idle.png-8bb8c17b48abac2e1f751a87d1f0cb0f.ctex"
+uid="uid://b6m3x1e5d55je"
+path="res://.godot/imported/Free Cow Sprites.png-aa432c90ac25c8ca0c3a5930225049a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber_idle.png"
-dest_files=["res://.godot/imported/GraveRobber_idle.png-8bb8c17b48abac2e1f751a87d1f0cb0f.ctex"]
+source_file="res://Assets/Sprites/Enemies/Free Cow Sprites.png"
+dest_files=["res://.godot/imported/Free Cow Sprites.png-aa432c90ac25c8ca0c3a5930225049a3.ctex"]
 
 [params]
 

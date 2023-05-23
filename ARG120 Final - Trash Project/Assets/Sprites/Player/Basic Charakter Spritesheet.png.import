@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn62o12326oak"
-path="res://.godot/imported/GraveRobber_craft.png-75ca8edc75e6a55ba20aed0e9f233335.ctex"
+uid="uid://dqhihtpgxc7g5"
+path="res://.godot/imported/Basic Charakter Spritesheet.png-3fbe45fd3fdbc90a21ceeb5abede9740.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber_craft.png"
-dest_files=["res://.godot/imported/GraveRobber_craft.png-75ca8edc75e6a55ba20aed0e9f233335.ctex"]
+source_file="res://Assets/Sprites/Player/Basic Charakter Spritesheet.png"
+dest_files=["res://.godot/imported/Basic Charakter Spritesheet.png-3fbe45fd3fdbc90a21ceeb5abede9740.ctex"]
 
 [params]
 

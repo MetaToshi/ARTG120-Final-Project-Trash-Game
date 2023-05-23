@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do3yowrjau1oi"
-path="res://.godot/imported/GraveRobber.png-f0c8c6e8cd3864d9482a8b5ec39596f5.ctex"
+uid="uid://cj4dm4rctsdv6"
+path="res://.godot/imported/isometric dump.png-c2575c5e29f2cb63f1b819dfd10cbbf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/2 GraveRobber/GraveRobber.png"
-dest_files=["res://.godot/imported/GraveRobber.png-f0c8c6e8cd3864d9482a8b5ec39596f5.ctex"]
+source_file="res://Assets/Sprites/Dump/isometric dump.png"
+dest_files=["res://.godot/imported/isometric dump.png-c2575c5e29f2cb63f1b819dfd10cbbf5.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://c2havtse0trim"]
 
 [ext_resource type="Script" path="res://Assets/Characters/Player/player.gd" id="1_n3clx"]
-[ext_resource type="Texture2D" uid="uid://btrpjfeicmq3m" path="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_on4pi"]
+[ext_resource type="Texture2D" uid="uid://dqhihtpgxc7g5" path="res://Assets/Sprites/Player/Basic Charakter Spritesheet.png" id="2_oyqqc"]
 [ext_resource type="PackedScene" uid="uid://dmgxx6ld7dnig" path="res://Assets/Objects/bar/bar.tscn" id="3_mnml5"]
 [ext_resource type="PackedScene" uid="uid://c5ycras7341kk" path="res://Assets/Objects/number_trash_icon/Remaining_Cans_Number.tscn" id="4_588re"]
 
@@ -248,7 +248,7 @@ script = ExtResource("1_n3clx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
-texture = ExtResource("1_on4pi")
+texture = ExtResource("2_oyqqc")
 hframes = 4
 vframes = 4
 
