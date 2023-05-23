@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://Scenes/night_scene/night.gd" id="1_mhorq"]
-[ext_resource type="PackedScene" path="res://Assets/Characters/Player/player_cat.tscn" id="2_b01mx"]
+[ext_resource type="PackedScene" path="res://Assets/Characters/Player/player.tscn" id="2_b01mx"]
 [ext_resource type="Texture2D" uid="uid://b6dhxalj1vbyc" path="res://TestingFiles/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Grass.png" id="3_ud1q8"]
 [ext_resource type="PackedScene" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="4_4piga"]
 [ext_resource type="PackedScene" path="res://Assets/Objects/dumpcan/dump.tscn" id="5_bcjyu"]
