@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dreprla4p16ug"]
+
+[ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="1_xwrqd"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bprjq"]
+vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)])
+
+[node name="day_scene" type="Node2D"]
+
+[node name="PlayerCat" parent="." instance=ExtResource("1_xwrqd")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_bprjq")

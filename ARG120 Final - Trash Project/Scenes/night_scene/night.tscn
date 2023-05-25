@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dy2og6f67dob2"]
+[gd_scene load_steps=13 format=3 uid="uid://dy2og6f67dob2"]
 
 [ext_resource type="Script" path="res://Scenes/night_scene/night.gd" id="1_mhorq"]
 [ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="2_b01mx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cj2oq5d2x6n05" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_cow.tscn" id="6_3rku3"]
 [ext_resource type="PackedScene" uid="uid://b3eid382e1xbm" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_spawner.tscn" id="8_x1ak7"]
 [ext_resource type="PackedScene" uid="uid://b5wk3772n7272" path="res://Assets/Objects/city/City.tscn" id="9_qdia8"]
+[ext_resource type="PackedScene" uid="uid://b6rtuubsw5aqw" path="res://Scenes/night_scene/day_and_night.tscn" id="9_qlkrk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i4o1r"]
 vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
@@ -137,3 +138,5 @@ movement_target = NodePath("../Dump")
 [node name="City" parent="." instance=ExtResource("9_qdia8")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("8_x1ak7")]
+
+[node name="day_and_night" parent="." instance=ExtResource("9_qlkrk")]
