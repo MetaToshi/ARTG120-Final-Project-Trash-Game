@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvb7nvlcr25jf"]
+[gd_scene load_steps=7 format=3 uid="uid://dvb7nvlcr25jf"]
 
 [ext_resource type="Script" path="res://Assets/Objects/trashcan/Trashcan.gd" id="1_njny8"]
 [ext_resource type="Texture2D" uid="uid://ij4i1ntjjqpm" path="res://Assets/Sprites/Trashcan/isometric can.png" id="2_rfs7h"]
@@ -10,6 +10,9 @@ size = Vector2(14, 11)
 [sub_resource type="CircleShape2D" id="CircleShape2D_dvkpf"]
 resource_local_to_scene = true
 radius = 34.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mif0x"]
+size = Vector2(16, 13)
 
 [node name="Trashcan" type="RigidBody2D" groups=["Trashcan"]]
 z_index = 5
@@ -38,4 +41,12 @@ offset_top = -19.0
 offset_right = -15.0
 offset_bottom = -19.0
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_mif0x")
+debug_color = Color(0.72549, 0.454902, 0.380392, 0.419608)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

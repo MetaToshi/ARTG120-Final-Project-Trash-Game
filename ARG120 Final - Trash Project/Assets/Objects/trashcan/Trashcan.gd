@@ -68,3 +68,7 @@ func update_circle():
 func _on_area_2d_body_entered(_body):
 	pass;
 	
+	
+func _on_area_2d_2_body_entered(body):
+	if 'EnemyCow' in body.name:
+		fill(1)
