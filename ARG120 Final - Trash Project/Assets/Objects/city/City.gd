@@ -21,7 +21,7 @@ func _on_area_2d_body_entered(body):
 	if ('EnemyCow' in body.name && current_happiness != 0):
 		body.queue_free();
 		subtract_from_current_happiness(1);	
-		print(current_happiness, "/",max_happiness)
+		#print(current_happiness, "/",max_happiness)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
