@@ -25,6 +25,8 @@ func _physics_process(_delta):
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
+		
+		#The timer is crashing because it seems to not exist, It may have not been commited
 		if $Timer.is_stopped():
 			if 'EnemyCow' in collision.get_collider().name:
 				$Timer.start()
@@ -32,6 +34,14 @@ func _physics_process(_delta):
 				current_trash += 1
 				($Bar).set_value_to(current_trash)
 	pick_new_state()
+
+func _on_area_2d_body_entered(body):
+	pass;
+	#None of this will run but it is another trash->player collision logic if the above one never works
+	print(body)
+	if ('EnemyCow' in body.name && current_trash != max_capacity):
+		body.queue_free();
+		add_trash(1);	
 
 
 func update_animation_parameters(move_input : Vector2):
@@ -100,9 +110,6 @@ func full():
 func pickup(value):
 	add_trash(value);
 
-
-func _on_area_2d_body_entered(_body):
-	print("Entered player zone!");
 
 func update_bar():
 	var bar = $Bar;
@@ -279,3 +286,4 @@ func set_max_cans(val):
 	
 func get_max_cans():
 	return max_available_cans;
+	

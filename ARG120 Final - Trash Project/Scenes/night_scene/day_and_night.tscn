@@ -2,22 +2,6 @@
 
 [ext_resource type="Script" path="res://Scenes/night_scene/day_and_night.gd" id="1_171ex"]
 
-[sub_resource type="Animation" id="Animation_gj8i7"]
-resource_name = "night_to_day"
-length = 90.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 89.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.784314), Color(0, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_bdeqk"]
 length = 0.001
 tracks/0/type = "value"
@@ -47,6 +31,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.784314)]
+}
+
+[sub_resource type="Animation" id="Animation_gj8i7"]
+resource_name = "night_to_day"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 89.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.784314), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d6456"]

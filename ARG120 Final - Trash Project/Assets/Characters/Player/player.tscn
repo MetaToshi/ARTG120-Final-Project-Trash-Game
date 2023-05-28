@@ -240,8 +240,7 @@ transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bk0dw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpjs2"]
-radius = 8.0
-height = 22.0
+height = 26.0
 
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_n3clx")
@@ -275,10 +274,6 @@ offset_top = -23.0
 offset_right = -15.0
 offset_bottom = -23.0
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.504
-one_shot = true
-
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -286,7 +281,10 @@ position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_dpjs2")
 
 [node name="Remaining_Cans_Number" parent="." instance=ExtResource("4_588re")]
+visible = false
 offset_left = -13.0
 offset_top = -24.0
 offset_right = -13.0
 offset_bottom = -24.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

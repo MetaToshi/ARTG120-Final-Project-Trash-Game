@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://cicbix1jau3nl"]
+
+[ext_resource type="Texture2D" uid="uid://ij4i1ntjjqpm" path="res://Assets/Sprites/Trashcan/isometric can.png" id="1_tc4mb"]
+[ext_resource type="Script" path="res://Scenes/UI/ui_cans.gd" id="1_ully4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n3op8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41pue"]
+
+[node name="UI_Cans" type="Control"]
+z_index = 100
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -74.0
+offset_right = -1561.0
+offset_bottom = -892.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ully4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(138, 112)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("1_tc4mb")
+
+[node name="TextNumber" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 82.0
+offset_right = 209.0
+offset_bottom = 159.0
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n3op8")
+text = "1"
+
+[node name="x" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 99.0
+offset_right = 180.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_41pue")
+text = "X"
