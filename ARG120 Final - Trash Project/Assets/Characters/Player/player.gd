@@ -27,17 +27,17 @@ func _physics_process(_delta):
 		var collision = get_slide_collision(i)
 		
 		#The timer is crashing because it seems to not exist, It may have not been commited
-		if $Timer.is_stopped():
-			if 'EnemyCow' in collision.get_collider().name:
-				$Timer.start()
-				print('yeowch!')
-				current_trash += 1
-				($Bar).set_value_to(current_trash)
+		#if $Timer.is_stopped():
+		#	if 'EnemyCow' in collision.get_collider().name:
+		#		$Timer.start()
+		#		print('yeowch!')
+		#		current_trash += 1
+		#		($Bar).set_value_to(current_trash)
 	pick_new_state()
 
 func _on_area_2d_body_entered(body):
-	pass;
-	#None of this will run but it is another trash->player collision logic if the above one never works
+	#pass;
+	#Temporary collision logic because the timer above appears to not exist
 	print(body)
 	if ('EnemyCow' in body.name && current_trash != max_capacity):
 		body.queue_free();
