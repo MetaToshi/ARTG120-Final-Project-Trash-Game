@@ -20,6 +20,7 @@ func actor_setup():
 @onready var sprite = $Sprite2D
 
 
+var numberneeded = 0
 func _physics_process(_delta):
 	if navigation_agent.is_navigation_finished():
 		return
@@ -35,9 +36,15 @@ func _physics_process(_delta):
 	new_velocity = new_velocity * move_speed
 	
 	velocity = new_velocity
-	
 	if (velocity.x < 0):
 		sprite.flip_h = true
+		while numberneeded == 0:
+			$Sprite2D/Area2D.move_local_x(4)
+			numberneeded+=1
 	elif(velocity.x > 0):
 		sprite.flip_h = false
 	
+
+
+func _on_area_2d_area_entered(area):
+	queue_free()

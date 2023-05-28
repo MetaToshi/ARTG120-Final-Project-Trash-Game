@@ -5,14 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://dmgxx6ld7dnig" path="res://Assets/Objects/bar/bar.tscn" id="3_wkbka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73wkr"]
-size = Vector2(14, 11)
+size = Vector2(14, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dvkpf"]
 resource_local_to_scene = true
 radius = 34.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mif0x"]
-size = Vector2(16, 13)
+size = Vector2(16, 17)
 
 [node name="Trashcan" type="RigidBody2D" groups=["Trashcan"]]
 z_index = 5
@@ -27,7 +27,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_rfs7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_73wkr")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -44,7 +44,7 @@ offset_bottom = -19.0
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(0, 3.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_mif0x")
 debug_color = Color(0.72549, 0.454902, 0.380392, 0.419608)
 

@@ -70,6 +70,5 @@ func _on_area_2d_body_entered(_body):
 	
 	
 func _on_area_2d_2_body_entered(body):
-	if ('EnemyCow' in body.name && current_capacity != max_capacity):
-		body.queue_free();
+	if 'EnemyCow' in body.name:
 		fill(1)

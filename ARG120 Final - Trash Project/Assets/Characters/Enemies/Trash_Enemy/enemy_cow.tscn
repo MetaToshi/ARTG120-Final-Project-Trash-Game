@@ -1,10 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://cj2oq5d2x6n05"]
+[gd_scene load_steps=23 format=3 uid="uid://cj2oq5d2x6n05"]
 
 [ext_resource type="Script" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_cow.gd" id="1_cvq14"]
 [ext_resource type="Texture2D" uid="uid://b6m3x1e5d55je" path="res://Assets/Sprites/Enemies/Free Cow Sprites.png" id="2_k18h1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1r2x"]
-size = Vector2(17.25, 9.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7y644"]
+radius = 0.15
+height = 13.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpemg"]
+size = Vector2(17, 11)
 
 [sub_resource type="Animation" id="Animation_myqf3"]
 resource_name = "idleright"
@@ -121,9 +125,16 @@ hframes = 3
 vframes = 2
 frame = 3
 
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-3.5, 1.5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7y644")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.625, 8)
-shape = SubResource("RectangleShape2D_y1r2x")
+position = Vector2(-1.5, 6.5)
+shape = SubResource("RectangleShape2D_xpemg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -140,3 +151,5 @@ parameters/walkright/blend_position = Vector2(0, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
