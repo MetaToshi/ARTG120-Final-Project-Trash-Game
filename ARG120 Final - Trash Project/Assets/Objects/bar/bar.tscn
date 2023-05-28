@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Objects/bar/Bar.gd" id="1_wnjrh"]
 [ext_resource type="Texture2D" uid="uid://b4jpi4lpor8bt" path="res://Assets/Objects/trashcan/images/over.png" id="2_60r7i"]
-[ext_resource type="Texture2D" uid="uid://134f6qwf6q0m" path="res://Assets/Objects/trashcan/images/progress.png" id="3_4vnkd"]
+[ext_resource type="Texture2D" uid="uid://1t2al1mreghq" path="res://Assets/Objects/trashcan/images/progress.png" id="3_4vnkd"]
 [ext_resource type="Texture2D" uid="uid://2wuw41u64amf" path="res://Assets/Objects/trashcan/images/under.png" id="4_1eb86"]
 
 [node name="Bar" type="Control"]
