@@ -88,7 +88,9 @@ func place_can():
 	set_can_frame()
 
 func set_can_frame():
-	($Remaining_Cans_Number).set_frame(currently_available_cans)
+	#($Remaining_Cans_Number).set_frame(currently_available_cans)
+	var node = get_parent().get_node("Camera2D").get_node("UI_Cans").set_text(str(currently_available_cans));
+	print(node);
 
 func _set_trash(val):
 	var prev = current_trash;

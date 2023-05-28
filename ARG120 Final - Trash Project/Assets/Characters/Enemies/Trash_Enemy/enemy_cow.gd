@@ -26,7 +26,7 @@ func _physics_process(_delta):
 		
 	move_and_slide()
 	for i in get_slide_collision_count():
-		queue_free()
+		pass#queue_free()
 		
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()

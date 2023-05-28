@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://tq65at8el15x"]
+
+[ext_resource type="Script" path="res://Scenes/UI/town_health_bar.gd" id="1_77363"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktwlh"]
+bg_color = Color(0.188235, 0.172549, 0.164706, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjqnv"]
+bg_color = Color(0.109804, 0.729412, 0.160784, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 25
+
+[node name="Town Health Bar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 41.0
+offset_bottom = 40.0
+script = ExtResource("1_77363")
+
+[node name="prog_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ktwlh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kjqnv")
+value = 50.0
+show_percentage = false
+
+[connection signal="value_changed" from="prog_bar" to="." method="_on_progress_bar_value_changed"]

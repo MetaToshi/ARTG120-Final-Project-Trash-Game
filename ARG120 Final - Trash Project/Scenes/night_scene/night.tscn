@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs8s5b3o3ry0m"]
+[gd_scene load_steps=15 format=3 uid="uid://cs8s5b3o3ry0m"]
 
 [ext_resource type="Script" path="res://Scenes/night_scene/night.gd" id="1_mhorq"]
 [ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="2_b01mx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvb7nvlcr25jf" path="res://Assets/Objects/trashcan/Trashcan.tscn" id="4_4piga"]
 [ext_resource type="PackedScene" uid="uid://cicbix1jau3nl" path="res://Scenes/UI/ui_cans.tscn" id="4_otbly"]
 [ext_resource type="PackedScene" uid="uid://7fu2he58dce3" path="res://Assets/Objects/dumpcan/dump.tscn" id="5_bcjyu"]
+[ext_resource type="PackedScene" uid="uid://tq65at8el15x" path="res://Scenes/UI/town_health_bar.tscn" id="5_pitef"]
 [ext_resource type="PackedScene" uid="uid://cj2oq5d2x6n05" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_cow.tscn" id="6_3rku3"]
 [ext_resource type="PackedScene" uid="uid://b3eid382e1xbm" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_spawner.tscn" id="8_x1ak7"]
 [ext_resource type="PackedScene" uid="uid://b5wk3772n7272" path="res://Assets/Objects/city/City.tscn" id="9_qdia8"]
@@ -130,11 +131,19 @@ offset_top = -198.0
 offset_right = -361.0
 offset_bottom = -198.0
 
+[node name="Town Health Bar" parent="Camera2D" instance=ExtResource("5_pitef")]
+z_index = 100
+z_as_relative = false
+offset_left = -233.0
+offset_top = -124.0
+offset_right = -7.0
+offset_bottom = -109.0
+
 [node name="Trashcan" parent="." instance=ExtResource("4_4piga")]
 position = Vector2(-160, -35)
 
 [node name="Trashcan2" parent="." instance=ExtResource("4_4piga")]
-position = Vector2(93, -60)
+position = Vector2(28, -92)
 
 [node name="Dump" parent="." instance=ExtResource("5_bcjyu")]
 position = Vector2(-145, 145)

@@ -49,3 +49,5 @@ func _assign_color(value):
 func set_max_value(val):
 	bar_over.max_value = val;
 	bar_under.max_value = val;
+	
+
