@@ -19,7 +19,6 @@ z_index = 5
 lock_rotation = true
 freeze = true
 script = ExtResource("1_njny8")
-starting_capacity = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.38419e-07, -3.57628e-07)

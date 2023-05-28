@@ -3,7 +3,7 @@ extends RigidBody2D
 signal current_capacity_increased(current_capacity);
 signal full();
 
-@export var starting_capacity: int = 2;
+@export var starting_capacity: int = 0;
 @export var max_capacity : int = 5;
 
 @export var full_radius : float = 34;
