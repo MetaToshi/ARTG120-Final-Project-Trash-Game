@@ -23,7 +23,11 @@ func actor_setup():
 func _physics_process(_delta):
 	if navigation_agent.is_navigation_finished():
 		return
-	
+		
+	move_and_slide()
+	for i in get_slide_collision_count():
+		queue_free()
+		
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 	var new_velocity: Vector2 = next_path_position - current_agent_position
@@ -36,12 +40,4 @@ func _physics_process(_delta):
 		sprite.flip_h = true
 	elif(velocity.x > 0):
 		sprite.flip_h = false
-		
-	move_and_slide()
-	var collision = 0
-	for i in get_slide_collision_count():
-		collision += 1
-	if collision > 0:
-		queue_free()
-		collision = 0
 	

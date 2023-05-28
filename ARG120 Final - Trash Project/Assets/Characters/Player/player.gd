@@ -23,6 +23,14 @@ func _physics_process(_delta):
 	# update Velocity
 	velocity = input_direction * move_speed;
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if $Timer.is_stopped():
+			if 'EnemyCow' in collision.get_collider().name:
+				$Timer.start()
+				print('yeowch!')
+				current_trash += 1
+				($Bar).set_value_to(current_trash)
 	pick_new_state()
 
 

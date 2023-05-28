@@ -11,6 +11,7 @@ time_end = 60
 enemy = ExtResource("2_kfgrr")
 enemy_num = 1
 enemy_spawn_delay = 1
+difficulty = 0
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_k444q")
