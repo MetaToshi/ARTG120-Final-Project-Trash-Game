@@ -8,6 +8,18 @@ extends CharacterBody2D
 @export var max_available_cans : int = 5;
 
 # parameters/Idle/blend_position
+@export var starting_money:int = 100;
+@onready var current_money: int = starting_money;
+
+func set_money(val):
+	current_money = val;
+func add_money(val):
+	current_money += val;
+func subtract_money(val):
+	current_money += -val;
+func get_money():
+	return current_money;
+
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
