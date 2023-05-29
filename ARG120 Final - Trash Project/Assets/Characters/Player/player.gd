@@ -13,13 +13,21 @@ extends CharacterBody2D
 
 func set_money(val):
 	current_money = val;
+	set_money_ui_text(current_money)
+	
 func add_money(val):
 	current_money += val;
+	set_money_ui_text(current_money)
+	
 func subtract_money(val):
 	current_money += -val;
+	set_money_ui_text(current_money)
+	
 func get_money():
 	return current_money;
 
+func set_money_ui_text(val):
+	get_parent().get_node("Camera2D").get_node("UI_Money").set_text(str(val));
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -74,6 +82,8 @@ func _ready():
 	($Bar).set_max_value(max_capacity)
 	($Bar).set_value_to(current_trash)
 	set_can_frame()
+	set_money_ui_text(current_money)
+	print("C:", current_money);
 	
 @export var max_capacity : int = 5;
 @onready var current_trash : int = 0;
