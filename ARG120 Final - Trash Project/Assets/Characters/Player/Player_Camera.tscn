@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5e1prjkx5t7e"]
+
+[ext_resource type="PackedScene" uid="uid://cicbix1jau3nl" path="res://Scenes/UI/ui_cans.tscn" id="1_ojuoj"]
+[ext_resource type="PackedScene" uid="uid://tq65at8el15x" path="res://Scenes/UI/town_health_bar.tscn" id="2_w0j4q"]
+[ext_resource type="PackedScene" uid="uid://d4db5amylgsg7" path="res://Scenes/UI/ui_money.tscn" id="3_wtl1o"]
+
+[node name="PlayerCamera" type="Camera2D"]
+
+[node name="UI_Cans" parent="." instance=ExtResource("1_ojuoj")]
+offset_left = -361.0
+offset_top = -198.0
+offset_right = -361.0
+offset_bottom = -198.0
+
+[node name="Town Health Bar" parent="." instance=ExtResource("2_w0j4q")]
+z_index = 100
+z_as_relative = false
+offset_left = -233.0
+offset_top = -124.0
+offset_right = -7.0
+offset_bottom = -109.0
+metadata/_edit_use_anchors_ = true
+
+[node name="UI_Money" parent="." instance=ExtResource("3_wtl1o")]
+z_index = 100
+offset_left = 179.0
+offset_top = -129.0
+offset_right = 219.0
+offset_bottom = -89.0
