@@ -8,6 +8,7 @@ func _ready():
 
 func _on_timer_timeout():
 	get_tree().change_scene_to_file("res://Scenes/day_scene/day_scene.tscn")
+	EnemySpawner.increase_difficulty(1)
 #	
 func _process(delta):
 	change_to_day()
