@@ -1,26 +1,40 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 100
-@export var starting_direction : Vector2 = Vector2(0,1);
+func update_values():
+	move_speed               = GlobalPlayerVariables.move_speed
+	starting_direction       = GlobalPlayerVariables.starting_direction
+	currently_available_cans = GlobalPlayerVariables.currently_available_cans
+	max_available_cans       = GlobalPlayerVariables.max_available_cans
+	starting_money 			 = GlobalPlayerVariables.starting_money
+	current_money            = GlobalPlayerVariables.current_money;
+	max_capacity             = GlobalPlayerVariables.max_capacity;
+	current_trash            = GlobalPlayerVariables.current_trash;
+
+
+@export var move_speed : float = GlobalPlayerVariables.move_speed;
+@export var starting_direction : Vector2 = GlobalPlayerVariables.starting_direction
 
 #vars for trash cans available for placement
-@export var currently_available_cans : int = 5;
-@export var max_available_cans : int = 5;
+@export var currently_available_cans : int = GlobalPlayerVariables.currently_available_cans;
+@export var max_available_cans : int = GlobalPlayerVariables.max_available_cans;
 
 # parameters/Idle/blend_position
-@export var starting_money:int = 100;
-@onready var current_money: int = starting_money;
+@export var starting_money:int = GlobalPlayerVariables.starting_money;
+@onready var current_money: int = GlobalPlayerVariables.starting_money;
 
 func set_money(val):
-	current_money = val;
+	GlobalPlayerVariables.current_money = val;
+	update_values();
 	set_money_ui_text(current_money)
 	
 func add_money(val):
-	current_money += val;
+	GlobalPlayerVariables.current_money += val;
+	update_values();
 	set_money_ui_text(current_money)
 	
 func subtract_money(val):
-	current_money += -val;
+	GlobalPlayerVariables.current_money += -val;
+	update_values();
 	set_money_ui_text(current_money)
 	
 func get_money():
@@ -85,11 +99,12 @@ func _ready():
 	set_money_ui_text(current_money)
 	print("C:", current_money);
 	
-@export var max_capacity : int = 5;
-@onready var current_trash : int = 0;
+@export var max_capacity : int = GlobalPlayerVariables.max_capacity;
+@onready var current_trash : int = GlobalPlayerVariables.current_trash;
 
 func set_max_capacity(val):
-	max_capacity = val;
+	GlobalPlayerVariables.max_capacity = val;
+	update_values()
 	($Bar).set_max_value(val);
 	($Bar).set_value_to(current_trash)
 	
@@ -106,7 +121,8 @@ func get_trash():
 	return current_trash;
 
 func place_can():
-	currently_available_cans = currently_available_cans - 1;
+	GlobalPlayerVariables.currently_available_cans = GlobalPlayerVariables.currently_available_cans - 1;
+	update_values()
 	set_can_frame()
 
 func set_can_frame():
@@ -116,7 +132,8 @@ func set_can_frame():
 
 func _set_trash(val):
 	var prev = current_trash;
-	current_trash = clamp(val, 0, max_capacity);
+	GlobalPlayerVariables.current_trash = clamp(val, 0, max_capacity);
+	update_values()
 	($Bar).set_value_to(current_trash);
 	if(current_trash != prev ):
 		emit_signal("trash_updated", current_trash);
@@ -125,7 +142,8 @@ func _set_trash(val):
 			emit_signal("trash_full");
 
 func add_trash(val):
-	_set_trash(current_trash + val);
+	_set_trash(GlobalPlayerVariables.current_trash + val);
+	update_values()
 	print("Player capacity is now ", current_trash)
 
 func full():
@@ -137,7 +155,7 @@ func pickup(value):
 
 func update_bar():
 	var bar = $Bar;
-	bar.value = current_trash;
+	bar.value = GlobalPlayerVariables.current_trash;
 	
 
 func collides():
@@ -295,19 +313,22 @@ func hide_hidden_trashcan():
 
 
 func subtract_from_current_cans(val):
-	currently_available_cans -= val;
+	GlobalPlayerVariables.currently_available_cans -= val;
+	update_values()
 	set_can_frame()
 
 func set_current_cans(val):
-	currently_available_cans = val;
+	GlobalPlayerVariables.currently_available_cans = val;
+	update_values();
 	set_can_frame()
 	
 func get_current_cans():
-	return currently_available_cans
+	return GlobalPlayerVariables.currently_available_cans
 	
 func set_max_cans(val):
-	max_available_cans = val;
+	GlobalPlayerVariables.max_available_cans = val;
+	update_values();
 	
 func get_max_cans():
-	return max_available_cans;
+	return GlobalPlayerVariables.max_available_cans;
 	

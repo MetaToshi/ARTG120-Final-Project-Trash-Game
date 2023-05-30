@@ -1,6 +1,10 @@
 extends Control
 var player;
 
+#Use this variable to call functions that (should) change the player variables as well
+# Ex: Instead of player.set_max_cans(5)    do
+# GlobalPlayerVariables.set_max_cans(5);
+
 func _ready():
 	player = get_node("../PlayerCat")
 
