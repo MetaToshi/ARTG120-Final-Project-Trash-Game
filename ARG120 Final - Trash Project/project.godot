@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ARG120 Final - Trash Project"
-run/main_scene="res://Scenes/night_scene/night.tscn"
+run/main_scene="res://Scenes/startmenu/StartMenu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
