@@ -17,7 +17,8 @@ extends Node
 @onready var current_happiness = default_starting_city_health;
 @onready var current_max_happiness = default_max_city_health;
 
-
+@export var default_daily_player_income : int = 80;
+@onready var daily_player_income : int = default_daily_player_income;
 
 func RESET_TO_DEFAULT_VALUES():
 	move_speed = default_move_speed;
@@ -34,6 +35,8 @@ func RESET_TO_DEFAULT_VALUES():
 	
 	current_max_happiness = default_max_city_health;
 	current_happiness = default_starting_city_health;
+	
+	daily_player_income = default_daily_player_income;
 	
 func load_on_night():
 	currently_available_cans = max_available_cans;

@@ -105,7 +105,7 @@ offset_top = -320.0
 offset_right = -173.0
 offset_bottom = -320.0
 
-[node name="Town Health Bar" parent="Camera2D" instance=ExtResource("3_n7h6a")]
+[node name="Town_Health_Bar" parent="Camera2D" instance=ExtResource("3_n7h6a")]
 visible = false
 z_index = 100
 z_as_relative = false

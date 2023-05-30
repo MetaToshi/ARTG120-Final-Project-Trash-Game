@@ -7,7 +7,7 @@
 radius = 37.2088
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4lex"]
-radius = 65.0
+radius = 58.0086
 
 [node name="City" type="RigidBody2D" groups=["city"]]
 freeze = true

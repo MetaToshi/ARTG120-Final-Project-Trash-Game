@@ -8,7 +8,7 @@ extends RigidBody2D
 var city_health_bar = null;
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	city_health_bar = get_parent().get_node("Camera2D").get_node("Town Health Bar");
+	city_health_bar = get_parent().get_node("Camera2D").get_node("Town_Health_Bar");
 	city_health_bar.set_max_health(max_happiness);
 	city_health_bar.set_current_value(starting_happiness);
 	print("City is ", city_health_bar);
