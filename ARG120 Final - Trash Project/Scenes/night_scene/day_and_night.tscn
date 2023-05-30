@@ -76,4 +76,8 @@ wait_time = 90.0
 one_shot = true
 autostart = true
 
+[node name="change_level" type="Timer" parent="."]
+wait_time = 20.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="change_level" to="." method="_on_change_level_timeout"]
