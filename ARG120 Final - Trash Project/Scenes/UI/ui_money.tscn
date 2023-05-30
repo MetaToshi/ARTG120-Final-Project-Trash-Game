@@ -11,7 +11,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_1yyny")
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TextEdit" type="Label" parent="."]
 layout_mode = 0
 offset_right = 61.0
 offset_bottom = 29.0

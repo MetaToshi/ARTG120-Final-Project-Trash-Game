@@ -128,8 +128,8 @@ func place_can():
 
 func set_can_frame():
 	($Remaining_Cans_Number).set_frame(currently_available_cans)
-	var node = get_parent().get_node("Camera2D").get_node("UI_Cans").set_text(str(currently_available_cans));
-	print(node);
+	var node = get_parent().get_node("Camera2D").get_node("UI_Cans").set_text(str(currently_available_cans) + "/" + str(max_available_cans));
+	print("M:", max_available_cans);
 
 func _set_trash(val):
 	var prev = current_trash;

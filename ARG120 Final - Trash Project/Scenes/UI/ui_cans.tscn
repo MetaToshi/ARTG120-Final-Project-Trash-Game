@@ -16,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -107.0
 offset_top = -74.0
-offset_right = -1561.0
+offset_right = -1453.0
 offset_bottom = -892.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -27,23 +27,22 @@ position = Vector2(138, 112)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("1_tc4mb")
 
-[node name="TextNumber" type="TextEdit" parent="."]
+[node name="TextNumber" type="Label" parent="."]
 layout_mode = 0
 offset_left = 164.0
 offset_top = 82.0
-offset_right = 209.0
+offset_right = 363.0
 offset_bottom = 159.0
-theme_override_colors/background_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxEmpty_n3op8")
 text = "1"
 
-[node name="x" type="TextEdit" parent="."]
+[node name="x" type="Label" parent="."]
 layout_mode = 0
 offset_left = 152.0
 offset_top = 99.0
-offset_right = 180.0
-offset_bottom = 170.0
+offset_right = 192.0
+offset_bottom = 131.0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_41pue")
 text = "X"
