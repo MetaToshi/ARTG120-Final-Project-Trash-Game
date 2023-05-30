@@ -9,10 +9,15 @@ var time = 0
 var difficulty = 1
 var wave = 0
 
+@onready var timer = get_tree().get_first_node_in_group("/root/EnemySpawner/SpawnTimer")
+
+func _ready():
+	pass
+
 func _on_timer_timeout():
 	time += 1
 	wave += 1
-	var howmanyenemy = difficulty
+	var howmanyenemy = 1
 	var enemy_spawns = spawns
 	for i in enemy_spawns:
 		if time >= i.time_start and time <= i.time_end:
@@ -23,7 +28,6 @@ func _on_timer_timeout():
 				var new_enemy = load(str(i.enemy.resource_path))
 				if wave <= 10:
 					while howmanyenemy > 0:
-						print('normalspawn')
 						var counter = 0
 						while counter < i.enemy_num:
 							var enemy_spawn = new_enemy.instantiate()
@@ -32,18 +36,14 @@ func _on_timer_timeout():
 							counter += 1
 							howmanyenemy -= 1
 				elif wave > 10:
-					print('waving')
-					while wave >= 0:
-						print('wavecheck')
+					while wave > 0:
 						var counter = 0
 						while counter < i.enemy_num:
-							print('funnyspawn')
 							var enemy_spawn = new_enemy.instantiate()
 							enemy_spawn.global_position = get_random_position()
 							add_child(enemy_spawn)
 							counter += 1
-							howmanyenemy -= 1
-						wave -= 1
+						wave -= 5/difficulty
 						
 					
 
@@ -78,3 +78,11 @@ func get_random_position():
 
 func increase_difficulty(key):
 	difficulty += key
+	
+
+func decrease_difficulty():
+	#print(timer.wait_time)
+	#timer.wait_time += 0.1
+	#print('ok')
+	#print(timer.wait_time)
+	pass;
