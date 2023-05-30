@@ -6,7 +6,7 @@ var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	trashcan = get_node("Trashcan")
+
 	player = get_node("PlayerCat")
 
 
