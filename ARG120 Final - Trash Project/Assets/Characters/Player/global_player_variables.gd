@@ -8,16 +8,36 @@ extends Node
 @export var default_currently_available_cans : int = 5;
 @export var default_max_available_cans : int = 5;
 @export var default_starting_trash : int = 0;
+@export var default_trash_can_capacity : int = 5;
+
+#City Variables
+@export var default_max_city_health : int = 10;
+@export var default_starting_city_health : int = 10;
+
+@onready var current_happiness = default_starting_city_health;
+@onready var current_max_happiness = default_max_city_health;
+
 
 
 func RESET_TO_DEFAULT_VALUES():
 	move_speed = default_move_speed;
 	starting_direction = default_starting_direction;
+	
 	starting_money = default_starting_money;
+	
+	current_trash = default_starting_trash;
 	max_capacity = default_max_capacity;
+	
 	currently_available_cans = default_currently_available_cans;
 	max_available_cans = default_max_available_cans;
-	current_trash = default_starting_trash;
+	trash_can_capacity = default_trash_can_capacity;
+	
+	current_max_happiness = default_max_city_health;
+	current_happiness = default_starting_city_health;
+	
+func load_on_night():
+	currently_available_cans = max_available_cans;
+	current_trash = 0;
 
 
 var move_speed : float = default_move_speed
@@ -42,6 +62,16 @@ func subtract_money(val):
 func get_money():
 	return current_money;
 
+
+@onready var trash_can_capacity = default_trash_can_capacity;
+
+
+
+func get_trash_can_capacity():
+	return trash_can_capacity;
+
+func set_trash_can_capacity(val):
+	trash_can_capacity = val;
 
 
 	
@@ -79,4 +109,16 @@ func set_max_cans(val):
 	
 func get_max_cans():
 	return max_available_cans;
+	
+func get_city_happiness():
+	return current_happiness
+
+func set_city_happiness(val):
+	current_happiness = val;
+
+func get_city_max_happiness():
+	return current_max_happiness;
+	
+func set_city_max_happiness(val):
+	current_max_happiness = val;
 	

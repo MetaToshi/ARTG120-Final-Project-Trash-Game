@@ -128,4 +128,6 @@ grow_horizontal = 0
 
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playercanupgrade" to="Shop" method="_on_playercanupgrade_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playerheldupgrade" to="Shop" method="_on_playerheldupgrade_pressed"]
+[connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/trashcanupgrade" to="Shop" method="_on_trashcanupgrade_pressed"]
+[connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/Restore" to="Shop" method="_on_restore_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/back_to_level" to="Shop" method="_on_back_to_level_pressed"]

@@ -18,16 +18,33 @@ func _on_playercanupgrade_pressed():
 	cur += 1
 	GlobalPlayerVariables.set_max_cans(cur)
 	player.update_values()
+	print("------------Can Upgrade------------")
 	print("Global: ", GlobalPlayerVariables.max_available_cans);
 	print("Local: ", player.max_available_cans);
 
 
 
 func _on_playerheldupgrade_pressed():
-	pass # Replace with function body.
+	
+	GlobalPlayerVariables.set_max_capacity(GlobalPlayerVariables.get_max_capacity() + 1);
+	player.update_values();
+	print("------------Player Capacity Upgrade------------")
+	print("Global: ", GlobalPlayerVariables.get_max_capacity());
+	print("Local: ", player.get_max_capacity());
+	# Replace with function body.
 
-
-
+func _on_trashcanupgrade_pressed():
+	#trashcan capacity increased
+	GlobalPlayerVariables.set_trash_can_capacity(GlobalPlayerVariables.get_trash_can_capacity() + 1)
+	print("------------Can Capacity Upgrade------------")
+	print("Global: ", GlobalPlayerVariables.get_trash_can_capacity());
+	
+func _on_restore_pressed():
+	GlobalPlayerVariables.set_city_happiness(GlobalPlayerVariables.get_city_max_happiness());
+	
+	
 
 func _on_back_to_level_pressed():
 	get_tree().change_scene_to_file("res://Scenes/night_scene/night.tscn")
+
+

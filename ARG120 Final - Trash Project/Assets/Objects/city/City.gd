@@ -1,9 +1,9 @@
 extends RigidBody2D
 
 @export var max_happiness = 10;
-@export var starting_happiness = 10;
+@onready var starting_happiness = GlobalPlayerVariables.current_happiness;;
 
-@onready var current_happiness = starting_happiness;
+@onready var current_happiness = GlobalPlayerVariables.current_happiness;;
 
 var city_health_bar = null;
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +13,11 @@ func _ready():
 	city_health_bar.set_current_value(starting_happiness);
 	print("City is ", city_health_bar);
 	#Replace with function body.
+	
+	
+func update_values():
+	max_happiness = GlobalPlayerVariables.current_max_happiness;
+	current_happiness = GlobalPlayerVariables.current_happiness;
 	
 func _on_area_2d_body_entered(body):
 	#pass;
@@ -26,27 +31,32 @@ func _on_area_2d_body_entered(body):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
 
 func get_max_happiness():
-	return max_happiness;
+	return GlobalPlayerVariables.current_max_happiness;
 	
 func get_current_happiness():
-	return current_happiness;
+	return GlobalPlayerVariables.current_happiness;
 
 func set_max_happiness(val):
-	max_happiness = val;
+	GlobalPlayerVariables.current_max_happiness = val;
+	update_values()
 	city_health_bar.set_current_value(current_happiness);
 	
 func set_current_happiness(val):
-	current_happiness = clamp(val, 0, max_happiness);
+	GlobalPlayerVariables.current_happiness = clamp(val, 0, max_happiness);
+	update_values()
 	city_health_bar.set_current_value(current_happiness);
 
 func add_to_current_happiness(val):
-	current_happiness = clamp(current_happiness + val, 0, max_happiness);
+	GlobalPlayerVariables.current_happiness = clamp(current_happiness + val, 0, max_happiness);
+	update_values()
 	city_health_bar.set_current_value(current_happiness);
 
 func subtract_from_current_happiness(val):
-	current_happiness = clamp(current_happiness - val, 0, max_happiness);
+	GlobalPlayerVariables.current_happiness = clamp(current_happiness - val, 0, max_happiness);
+	update_values();
 	city_health_bar.set_current_value(current_happiness);
 
 

@@ -4,7 +4,7 @@ signal current_capacity_increased(current_capacity);
 signal full();
 
 @export var starting_capacity: int = 0;
-@export var max_capacity : int = 5;
+var max_capacity : int = GlobalPlayerVariables.get_trash_can_capacity();
 
 @export var full_radius : float = 34;
 @export var empty_radius : float = 5;

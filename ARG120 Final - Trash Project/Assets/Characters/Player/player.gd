@@ -92,6 +92,7 @@ func pick_new_state():
 ################################################################################
 
 func _ready():
+	GlobalPlayerVariables.load_on_night();
 	update_values();
 	animation_tree.set("parameters/Idle/blend_positiona", starting_direction)
 	($Bar).set_max_value(max_capacity)
