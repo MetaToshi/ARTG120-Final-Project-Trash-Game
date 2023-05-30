@@ -153,25 +153,6 @@ func get_closest_trashcan():
 
 var total_near_trashcans = 0;
 var touched_trashcans = [];
-#func _on_area_2d_area_entered(area):
-#	
-#	if(area.is_in_group('trashcan')):
-#		total_near_trashcans+=1;
-#		closest_trashcan = area.get_parent();
-#		#Adding to nearby trashcans array
-#		print(closest_trashcan);
-#		touched_trashcans.append(area.get_parent());
-
-
-#func _on_area_2d_area_exited(area):
-#	if(area.is_in_group('trashcan')):
-#		total_near_trashcans-=1;
-#		delete_value(area.get_parent())
-#		if(total_near_trashcans == 0):
-#			closest_trashcan = null;
-#		else: 
-#			closest_trashcan = touched_trashcans[0];
-#		print(closest_trashcan);
 
 @export var pickup_range = 36;
 
@@ -267,6 +248,9 @@ func pickup_empty_can():
 		get_parent().remove_child(closest_trashcan);
 		closest_trashcan = null;
 		set_current_cans(currently_available_cans+1);
+		
+
+@export var upgrade_can_max_capacity = 5;
 
 func spawner():
 	#print("test")

@@ -23,6 +23,15 @@ func get_current_capacity():
 func get_full_radius():
 	return full_radius;
 
+
+func get_max_capacity():
+	return max_capacity;
+	
+func set_max_capacity(val):
+	max_capacity = val;
+	($Bar).set_max_value(max_capacity);
+	($Bar).set_value_to(current_capacity);
+
 func _ready():
 	var a2d = $Area2D;
 	a2d.add_to_group("trashcan");
