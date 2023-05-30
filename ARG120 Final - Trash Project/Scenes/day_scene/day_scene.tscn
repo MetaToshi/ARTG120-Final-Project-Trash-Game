@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dreprla4p16ug"]
+[gd_scene load_steps=7 format=3 uid="uid://dreprla4p16ug"]
 
 [ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="1_xwrqd"]
+[ext_resource type="PackedScene" uid="uid://cicbix1jau3nl" path="res://Scenes/UI/ui_cans.tscn" id="2_buod3"]
+[ext_resource type="Script" path="res://Scenes/day_scene/Shop.gd" id="2_qa2x0"]
+[ext_resource type="PackedScene" uid="uid://tq65at8el15x" path="res://Scenes/UI/town_health_bar.tscn" id="3_n7h6a"]
+[ext_resource type="PackedScene" uid="uid://d4db5amylgsg7" path="res://Scenes/UI/ui_money.tscn" id="4_6m5d3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bprjq"]
 vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
@@ -12,4 +16,102 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-591, -305, 1302, -305,
 [node name="PlayerCat" parent="." instance=ExtResource("1_xwrqd")]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+scale = Vector2(0.5, 0.5)
 navigation_polygon = SubResource("NavigationPolygon_bprjq")
+
+[node name="Shop" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -296.0
+offset_top = -152.0
+offset_right = 656.0
+offset_bottom = 320.0
+script = ExtResource("2_qa2x0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.319
+anchor_right = 0.312
+anchor_bottom = 0.319
+offset_left = 206.976
+offset_top = -142.568
+offset_right = 638.976
+offset_bottom = 313.432
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label2" type="Label" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Money:"
+
+[node name="Label" type="Label" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Upgrades:"
+
+[node name="playercanupgrade" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Costs: X Dollars"
+mouse_default_cursor_shape = 2
+text = "Increase Player Garbage Can Capacity"
+
+[node name="playerheldupgrade" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Costs: X Dollars"
+mouse_default_cursor_shape = 2
+text = "Increase Player Held Garbage Capacity"
+
+[node name="trashcanupgrade" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Costs: X Dollars"
+mouse_default_cursor_shape = 2
+text = "Increase Garbage Can Held Garbage Capacity"
+
+[node name="Restore" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Costs: X Dollars"
+mouse_default_cursor_shape = 2
+text = "Restore City Cleanliness"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 72)
+zoom = Vector2(0.5, 0.5)
+
+[node name="UI_Cans" parent="Camera2D" instance=ExtResource("2_buod3")]
+visible = false
+offset_left = -173.0
+offset_top = -320.0
+offset_right = -173.0
+offset_bottom = -320.0
+
+[node name="Town Health Bar" parent="Camera2D" instance=ExtResource("3_n7h6a")]
+visible = false
+z_index = 100
+z_as_relative = false
+offset_left = -233.0
+offset_top = -124.0
+offset_right = -7.0
+offset_bottom = -109.0
+metadata/_edit_use_anchors_ = true
+
+[node name="UI_Money" parent="Camera2D" instance=ExtResource("4_6m5d3")]
+z_index = 100
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 144.0
+offset_top = -224.0
+offset_right = 184.0
+offset_bottom = -184.0
+grow_horizontal = 0
+
+[connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playercanupgrade" to="Shop" method="_on_playercanupgrade_pressed"]
+[connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playerheldupgrade" to="Shop" method="_on_playerheldupgrade_pressed"]
