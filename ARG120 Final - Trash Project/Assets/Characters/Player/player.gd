@@ -92,6 +92,7 @@ func pick_new_state():
 ################################################################################
 
 func _ready():
+	update_values();
 	animation_tree.set("parameters/Idle/blend_positiona", starting_direction)
 	($Bar).set_max_value(max_capacity)
 	($Bar).set_value_to(current_trash)
@@ -126,7 +127,7 @@ func place_can():
 	set_can_frame()
 
 func set_can_frame():
-	#($Remaining_Cans_Number).set_frame(currently_available_cans)
+	($Remaining_Cans_Number).set_frame(currently_available_cans)
 	var node = get_parent().get_node("Camera2D").get_node("UI_Cans").set_text(str(currently_available_cans));
 	print(node);
 
@@ -244,6 +245,8 @@ func delete_value(value):
 	touched_trashcans.erase(value);
 	
 func _input(event):
+	# print("Global:", GlobalPlayerVariables.get_max_cans());
+	# print("Local:", max_available_cans);
 	if(event.is_action_pressed("pickup_trash")):
 		find_closest_can(true)
 		print("--------------------------------")

@@ -3,15 +3,23 @@ var player;
 
 #Use this variable to call functions that (should) change the player variables as well
 # Ex: Instead of player.set_max_cans(5)    do
+
 # GlobalPlayerVariables.set_max_cans(5);
+# player.update_values()     <--- Not entirely necessary but I think it should be included as it changes the values in the shop. The values will
+# Get updated upon returning to the night scene but I do not want to rely on that as that may introduce bugs
+
+# Calling update_values on a PLAYER INSTANCE will load all values from the global storage into the local instance
 
 func _ready():
-	player = get_node("../PlayerCat")
+	player = get_node("../PlayerCat");
 
 func _on_playercanupgrade_pressed():
-	var cur = player.get_max_cans()
+	var cur = GlobalPlayerVariables.get_max_cans()
 	cur += 1
-	player.set_max_cans(cur)
+	GlobalPlayerVariables.set_max_cans(cur)
+	player.update_values()
+	print("Global: ", GlobalPlayerVariables.max_available_cans);
+	print("Local: ", player.max_available_cans);
 
 
 
