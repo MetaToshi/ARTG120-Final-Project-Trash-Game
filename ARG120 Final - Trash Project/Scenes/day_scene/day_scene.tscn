@@ -81,6 +81,19 @@ tooltip_text = "Costs: X Dollars"
 mouse_default_cursor_shape = 2
 text = "Restore City Cleanliness"
 
+[node name="decrease" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Costs: X Dollars"
+mouse_default_cursor_shape = 2
+text = "Decrease Enemy Spawn"
+
+[node name="back_to_level" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Costs: X Dollars"
+mouse_default_cursor_shape = 2
+text = "Back to Work!"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 72)
 zoom = Vector2(0.5, 0.5)
@@ -115,3 +128,4 @@ grow_horizontal = 0
 
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playercanupgrade" to="Shop" method="_on_playercanupgrade_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playerheldupgrade" to="Shop" method="_on_playerheldupgrade_pressed"]
+[connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/back_to_level" to="Shop" method="_on_back_to_level_pressed"]
