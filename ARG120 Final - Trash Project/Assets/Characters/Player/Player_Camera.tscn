@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5e1prjkx5t7e"]
+[gd_scene load_steps=6 format=3 uid="uid://b5e1prjkx5t7e"]
 
 [ext_resource type="PackedScene" uid="uid://cicbix1jau3nl" path="res://Scenes/UI/ui_cans.tscn" id="1_ojuoj"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Player_Camera.gd" id="1_yp7cr"]
 [ext_resource type="PackedScene" uid="uid://tq65at8el15x" path="res://Scenes/UI/town_health_bar.tscn" id="2_w0j4q"]
 [ext_resource type="PackedScene" uid="uid://d4db5amylgsg7" path="res://Scenes/UI/ui_money.tscn" id="3_wtl1o"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/TimerLabel.gd" id="5_j8jt7"]
 
 [node name="PlayerCamera" type="Camera2D"]
 script = ExtResource("1_yp7cr")
@@ -29,3 +30,24 @@ offset_left = 179.0
 offset_top = -129.0
 offset_right = 219.0
 offset_bottom = -89.0
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+offset_left = 11.0
+offset_top = -120.0
+offset_right = 51.0
+offset_bottom = -97.0
+text = "TIME"
+script = ExtResource("5_j8jt7")
+
+[node name="round_timer" type="Timer" parent="TimerLabel"]
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[node name="cleanup_timer" type="Timer" parent="TimerLabel"]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="timeout" from="TimerLabel/round_timer" to="TimerLabel" method="_on_round_timer_timeout"]
+[connection signal="timeout" from="TimerLabel/cleanup_timer" to="TimerLabel" method="_on_cleanup_timer_timeout"]
