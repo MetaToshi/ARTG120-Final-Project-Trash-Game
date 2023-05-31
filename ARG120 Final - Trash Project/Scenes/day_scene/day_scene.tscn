@@ -157,7 +157,7 @@ texture = ExtResource("6_70rfj")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(168, 168)
-motion_mirroring = Vector2(250, 0)
+motion_mirroring = Vector2(500, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_repeat = 2
