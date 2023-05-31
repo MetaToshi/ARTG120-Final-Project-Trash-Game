@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dreprla4p16ug"]
+[gd_scene load_steps=10 format=3 uid="uid://dreprla4p16ug"]
 
 [ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="1_xwrqd"]
 [ext_resource type="PackedScene" uid="uid://cicbix1jau3nl" path="res://Scenes/UI/ui_cans.tscn" id="2_buod3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d4db5amylgsg7" path="res://Scenes/UI/ui_money.tscn" id="4_6m5d3"]
 [ext_resource type="Texture2D" uid="uid://d11j02whvn3xy" path="res://Assets/Sprites/ScrollingCity/2110.w026.n002.959B.p1.959.jpg" id="6_70rfj"]
 [ext_resource type="Script" path="res://Scenes/day_scene/ParallaxBackground.gd" id="6_xh1s8"]
+[ext_resource type="Texture2D" uid="uid://dpg115jtyuc62" path="res://Assets/Sprites/ScrollingCity/talkingshit.png" id="8_b3mmc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bprjq"]
 vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
@@ -153,6 +154,15 @@ texture_repeat = 2
 position = Vector2(0, -32)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_70rfj")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(168, 168)
+motion_mirroring = Vector2(250, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_repeat = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_b3mmc")
 
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playercanupgrade" to="Shop" method="_on_playercanupgrade_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playerheldupgrade" to="Shop" method="_on_playerheldupgrade_pressed"]
