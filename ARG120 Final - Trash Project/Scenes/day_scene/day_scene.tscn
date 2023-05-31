@@ -146,7 +146,7 @@ process_mode = 3
 script = ExtResource("6_xh1s8")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(2000, 2667)
+motion_mirroring = Vector2(1950, 2667)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2

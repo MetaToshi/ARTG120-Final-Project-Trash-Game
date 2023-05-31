@@ -5,13 +5,15 @@ var AnimationPlayed = false;
 
 func _ready():
 	$ColorRect.color.a = 200
+	change_to_day()
 
 func _on_timer_timeout():
+	$ColorRect.color.a = 0
 	$change_level.start()
 	
 #	
 func _process(delta):
-	change_to_day()
+	pass
 			
 func change_to_day():
 	$AnimationPlayer.play("night_to_day")
