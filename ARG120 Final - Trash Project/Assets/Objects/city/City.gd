@@ -25,7 +25,9 @@ func _on_area_2d_body_entered(body):
 	#print("Collision")
 	if ('EnemyCow' in body.name && current_happiness != 0):
 		body.queue_free();
-		subtract_from_current_happiness(1);	
+		subtract_from_current_happiness(1);
+		if (current_happiness <= 0):
+			get_tree().change_scene_to_file("res://Scenes/gameover/game_over.tscn")
 		#print(current_happiness, "/",max_happiness)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
