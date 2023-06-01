@@ -94,7 +94,8 @@ text = "Restore City Cleanliness"
 [node name="decrease" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Slightly decrease enemy spawn during the next night.
-Costs: 10 Dollars"
+Costs: 10 Dollars
+"
 mouse_default_cursor_shape = 2
 text = "Decrease Enemy Spawn"
 
@@ -168,4 +169,5 @@ texture = ExtResource("8_b3mmc")
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playerheldupgrade" to="Shop" method="_on_playerheldupgrade_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/trashcanupgrade" to="Shop" method="_on_trashcanupgrade_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/Restore" to="Shop" method="_on_restore_pressed"]
+[connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/decrease" to="Shop" method="_on_decrease_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer2/back_to_level" to="Shop" method="_on_back_to_level_pressed"]

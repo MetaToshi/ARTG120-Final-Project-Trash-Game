@@ -6,6 +6,7 @@ var player;
 @export var player_trash_capacity_cost : int = 10;
 @export var trash_can_can_capacity_cost : int = 10;
 @export var city_health_restore_cost : int = 10;
+@export var enemy_spawn_decrease_cost : int = 10;
 
 
 
@@ -72,3 +73,13 @@ func _on_back_to_level_pressed():
 func subtract_money(val):
 	GlobalPlayerVariables.subtract_money(val);
 	get_parent().get_node("Camera2D/UI_Money").set_text(str(GlobalPlayerVariables.get_money()))
+
+
+func _on_decrease_pressed():
+	if(GlobalPlayerVariables.get_money() >= enemy_spawn_decrease_cost):
+		EnemySpawner.shopcorrector += 1
+		print('checkafterincrease', EnemySpawner.shopcorrector)
+		subtract_money(enemy_spawn_decrease_cost);
+		print(EnemySpawner.difficulty)
+		EnemySpawner.increase_difficulty(-0.5)
+	
