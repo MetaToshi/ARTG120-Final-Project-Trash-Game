@@ -20,5 +20,10 @@ func change_to_day():
 
 
 func _on_change_level_timeout():
+	print('checkbeforecorrection', EnemySpawner.shopcorrector)
+	if EnemySpawner.shopcorrector > 0:
+		EnemySpawner.increase_difficulty(0.5)
+		EnemySpawner.shopcorrector -= 1
+		print('checkaftercorrection', EnemySpawner.shopcorrector)
 	EnemySpawner.increase_difficulty(1)
 	get_tree().change_scene_to_file("res://Scenes/day_scene/day_scene.tscn")

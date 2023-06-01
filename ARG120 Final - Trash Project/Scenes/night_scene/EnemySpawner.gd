@@ -8,8 +8,9 @@ extends Node2D
 var time = 0
 var difficulty = 1
 var wave = 0
+var shopcorrector = 0
 
-@onready var timer = get_tree().get_first_node_in_group("/root/EnemySpawner/SpawnTimer")
+@onready var timer = get_tree().get_first_node_in_group("spawntimer")
 
 func _ready():
 	pass
@@ -36,6 +37,7 @@ func _on_timer_timeout():
 							counter += 1
 							howmanyenemy -= 1
 				elif wave > 10:
+					print(difficulty)
 					while wave > 0:
 						var counter = 0
 						while counter < i.enemy_num:
