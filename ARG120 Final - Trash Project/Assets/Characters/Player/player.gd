@@ -48,6 +48,12 @@ func set_money_ui_text(val):
 
 
 func _physics_process(_delta):
+	#Check if in day Scene, if we are, lets just hardcode the moving right animation
+	if(get_parent().name == "day_scene"):
+		update_animation_parameters(Vector2(1,0));
+		pick_new_state()
+		return;
+	
 	# Get input direction
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"), 
@@ -60,7 +66,7 @@ func _physics_process(_delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		
-		#The timer is crashing because it seems to not exist, It may have not been commited
+		#The timer is crashing because it seems to not exist, It may have not been commited? - Wyatt
 		#if $Timer.is_stopped():
 		#	if 'EnemyCow' in collision.get_collider().name:
 		#		$Timer.start()
