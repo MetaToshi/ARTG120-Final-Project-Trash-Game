@@ -50,8 +50,8 @@ func set_money_ui_text(val):
 func _physics_process(_delta):
 	#Check if in day Scene, if we are, lets just hardcode the moving right animation
 	if(get_parent().name == "day_scene"):
-		update_animation_parameters(Vector2(1,0));
-		pick_new_state()
+		animation_tree.set("parameters/Walk/blend_position", Vector2(1,0));
+		state_machine.travel("Walk")
 		return;
 	
 	# Get input direction
@@ -106,6 +106,10 @@ func _ready():
 	set_can_frame()
 	set_money_ui_text(current_money)
 	print("C:", current_money);
+	
+	#Check if parent scene is day, if it is lets hide the trash bar
+	if(get_parent().name == "day_scene"):
+		set_visibility(false);
 	
 @export var max_capacity : int = GlobalPlayerVariables.max_capacity;
 @onready var current_trash : int = GlobalPlayerVariables.current_trash;
@@ -341,4 +345,6 @@ func set_max_cans(val):
 	
 func get_max_cans():
 	return GlobalPlayerVariables.max_available_cans;
-	
+
+func set_visibility(boolean):
+	$Bar.visible = boolean;
