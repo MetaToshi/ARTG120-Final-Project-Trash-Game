@@ -6,7 +6,7 @@ extends Node2D
 @onready var player = get_tree().get_first_node_in_group("city")
 
 var time = 0
-var difficulty = 1
+var difficulty = 0.5
 var wave = 0
 var shopcorrector = 0
 
@@ -16,6 +16,7 @@ func _ready():
 	pass
 
 func _on_timer_timeout():
+	difficulty = EnemySpawner.difficulty
 	time += 1
 	wave += 1
 	var howmanyenemy = 1
