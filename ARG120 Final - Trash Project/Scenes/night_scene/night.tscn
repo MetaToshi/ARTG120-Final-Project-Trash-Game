@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b5wk3772n7272" path="res://Assets/Objects/city/City.tscn" id="9_qdia8"]
 [ext_resource type="PackedScene" uid="uid://b6rtuubsw5aqw" path="res://Scenes/night_scene/day_and_night.tscn" id="9_qlkrk"]
 [ext_resource type="PackedScene" uid="uid://ytlfys71ecdi" path="res://Assets/Objects/night_tree/night_tree.tscn" id="12_f1ybt"]
-[ext_resource type="PackedScene" uid="uid://b5e1prjkx5t7e" path="res://Assets/Characters/Player/Player_Camera.tscn" id="12_upixq"]
+[ext_resource type="PackedScene" uid="uid://kmsn3h0oxlfs" path="res://Assets/Characters/Player/Player_Camera.tscn" id="12_upixq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i4o1r"]
 vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
@@ -550,6 +550,8 @@ position = Vector2(515, 5)
 movement_target = NodePath("../Dump")
 
 [node name="City" parent="." instance=ExtResource("9_qdia8")]
+z_index = 5
+y_sort_enabled = true
 position = Vector2(350, 106)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("8_x1ak7")]
@@ -557,6 +559,7 @@ position = Vector2(27, 16)
 
 [node name="day_and_night" parent="." instance=ExtResource("9_qlkrk")]
 z_index = 25
+y_sort_enabled = true
 
 [node name="Night_Tree" parent="." instance=ExtResource("12_f1ybt")]
 position = Vector2(-670, -6)

@@ -3,20 +3,20 @@
 [ext_resource type="Script" path="res://Assets/Objects/city/City.gd" id="1_8ubjw"]
 [ext_resource type="Texture2D" uid="uid://bycse747ogjyv" path="res://Assets/Sprites/City/120 - City.png" id="2_n7bkf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lbuii"]
-radius = 37.2088
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnfmn"]
+size = Vector2(76.6667, 55.3333)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y4lex"]
-radius = 58.0086
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70o6p"]
+size = Vector2(112, 90)
 
 [node name="City" type="RigidBody2D" groups=["city"]]
 freeze = true
 script = ExtResource("1_8ubjw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5.78571)
+position = Vector2(1.5, 7.5)
 scale = Vector2(1.5, 1.5)
-shape = SubResource("CircleShape2D_lbuii")
+shape = SubResource("RectangleShape2D_lnfmn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.999996, -4)
@@ -26,7 +26,7 @@ texture = ExtResource("2_n7bkf")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 6)
-shape = SubResource("CircleShape2D_y4lex")
+position = Vector2(3, 5)
+shape = SubResource("RectangleShape2D_70o6p")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
