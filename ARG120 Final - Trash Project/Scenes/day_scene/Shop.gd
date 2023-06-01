@@ -76,10 +76,11 @@ func subtract_money(val):
 
 
 func _on_decrease_pressed():
-	if(GlobalPlayerVariables.get_money() >= enemy_spawn_decrease_cost):
-		EnemySpawner.shopcorrector += 1
-		print('checkafterincrease', EnemySpawner.shopcorrector)
-		subtract_money(enemy_spawn_decrease_cost);
-		print(EnemySpawner.difficulty)
-		EnemySpawner.increase_difficulty(-0.5)
+	if EnemySpawner.shopcorrector < 0.3:
+		if(GlobalPlayerVariables.get_money() >= enemy_spawn_decrease_cost):
+			subtract_money(enemy_spawn_decrease_cost);
+			EnemySpawner.increase_difficulty(-0.1)
+			EnemySpawner.shopcorrector += 0.1
+	else:
+		print('You already purchased this 3 times!')
 	
