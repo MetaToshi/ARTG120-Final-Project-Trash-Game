@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5wk3772n7272"]
 
 [ext_resource type="Script" path="res://Assets/Objects/city/City.gd" id="1_8ubjw"]
-[ext_resource type="Texture2D" uid="uid://dek763fq0mbs3" path="res://Assets/Sprites/City/isometric city.png" id="2_y15ns"]
+[ext_resource type="Texture2D" uid="uid://bycse747ogjyv" path="res://Assets/Sprites/City/120 - City.png" id="2_n7bkf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbuii"]
 radius = 37.2088
@@ -19,8 +19,9 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_lbuii")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_y15ns")
+position = Vector2(0.999996, -4)
+scale = Vector2(0.715, 0.695)
+texture = ExtResource("2_n7bkf")
 
 [node name="Area2D" type="Area2D" parent="."]
 

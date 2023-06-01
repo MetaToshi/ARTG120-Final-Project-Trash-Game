@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://7fu2he58dce3"]
 
 [ext_resource type="Script" path="res://Assets/Objects/dumpcan/dump.gd" id="1_2be44"]
-[ext_resource type="Texture2D" uid="uid://cj4dm4rctsdv6" path="res://Assets/Sprites/Dump/isometric dump.png" id="2_a36k1"]
+[ext_resource type="Texture2D" uid="uid://by3ga6qif8k3k" path="res://Assets/Sprites/Dump/120 - Dumpster .png" id="2_c1yil"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fmij"]
 radius = 14.0
@@ -18,8 +18,9 @@ freeze = true
 script = ExtResource("1_2be44")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_a36k1")
+position = Vector2(-2, 3)
+scale = Vector2(0.712255, 0.702451)
+texture = ExtResource("2_c1yil")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 7)
