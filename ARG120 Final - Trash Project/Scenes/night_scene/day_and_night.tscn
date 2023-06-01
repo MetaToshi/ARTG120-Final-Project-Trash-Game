@@ -64,7 +64,7 @@ offset_left = -2669.0
 offset_top = -1779.0
 offset_right = 2990.0
 offset_bottom = 2300.0
-color = Color(0, 0, 0, 0.588235)
+color = Color(0, 0, 0.211765, 0.537255)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

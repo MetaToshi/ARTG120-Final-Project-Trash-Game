@@ -17,7 +17,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-591, -305, 1302, -305,
 [node name="day_scene" type="Node2D"]
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_xwrqd")]
-position = Vector2(120, 240)
+position = Vector2(113, 183)
 scale = Vector2(2, 2)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
