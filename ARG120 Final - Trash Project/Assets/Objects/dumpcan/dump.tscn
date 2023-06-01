@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://by3ga6qif8k3k" path="res://Assets/Sprites/Dump/120 - Dumpster .png" id="2_c1yil"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fmij"]
-radius = 14.0
-height = 70.0
+radius = 16.0
+height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w5ao"]
-height = 20.0
+radius = 12.0
+height = 36.0
 
 [node name="Dump" type="RigidBody2D" groups=["Trashcan", "dump"]]
 z_index = 5
@@ -23,7 +24,7 @@ scale = Vector2(0.712255, 0.702451)
 texture = ExtResource("2_c1yil")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 7)
+position = Vector2(-3, 5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5fmij")
 
