@@ -1,6 +1,6 @@
 extends Node
 
-
+#Player Variables
 @export var default_move_speed : float = 100;
 @export var default_starting_direction : Vector2 = Vector2(0,1);
 @export var default_starting_money : float = 100;
@@ -20,6 +20,19 @@ extends Node
 @export var default_daily_player_income : int = 80;
 @onready var daily_player_income : int = default_daily_player_income;
 
+#Shop Prices
+@export var default_can_amount_cost      : int = 10;
+@export var default_player_capacity_cost : int = 10;
+@export var default_can_capacity_cost    : int = 10;
+@export var default_city_restore_cost    : int = 10;
+@export var default_enemy_decrease_cost  : int = 10;
+
+@onready var can_amount_cost = default_can_amount_cost;
+@onready var player_capacity_cost = default_player_capacity_cost;
+@onready var can_capacity_cost = default_can_capacity_cost;
+@onready var city_restore_cost = default_city_restore_cost;
+@onready var enemy_decrease_cost = default_enemy_decrease_cost;
+
 func RESET_TO_DEFAULT_VALUES():
 	move_speed = default_move_speed;
 	starting_direction = default_starting_direction;
@@ -37,6 +50,15 @@ func RESET_TO_DEFAULT_VALUES():
 	current_happiness = default_starting_city_health;
 	
 	daily_player_income = default_daily_player_income;
+	
+	
+	#reset shop prices
+	can_amount_cost = default_can_amount_cost;
+	player_capacity_cost = default_player_capacity_cost;
+	can_capacity_cost = default_can_capacity_cost;
+	city_restore_cost = default_city_restore_cost;
+	enemy_decrease_cost = default_enemy_decrease_cost;
+
 	
 func load_on_night():
 	currently_available_cans = max_available_cans;

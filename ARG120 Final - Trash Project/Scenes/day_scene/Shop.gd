@@ -2,12 +2,12 @@ extends Control
 var player;
 
 
-@export var player_max_cans_cost : int = 10;
-@export var player_trash_capacity_cost : int = 10;
-@export var trash_can_can_capacity_cost : int = 10;
-@export var city_health_restore_cost : int = 10;
-@export var enemy_spawn_decrease_cost : int = 10;
 
+#         var can_amount_cost 
+#@onready var player_capacity_cost 
+#@onready var can_capacity_cost
+#@onready var city_restore_cost
+#@onready var enemy_decrease_cost 
 
 
 #Use this variable to call functions that (should) change the player variables as well
@@ -27,8 +27,9 @@ func _ready():
 	
 
 func _on_playercanupgrade_pressed():
-	if(GlobalPlayerVariables.get_money() >= player_max_cans_cost):
-		subtract_money(player_max_cans_cost);
+	if(GlobalPlayerVariables.get_money() >= GlobalPlayerVariables.can_amount_cost):
+		
+		subtract_money(GlobalPlayerVariables.can_amount_cost);
 		
 		var cur = GlobalPlayerVariables.get_max_cans()
 		cur += 1
@@ -37,34 +38,69 @@ func _on_playercanupgrade_pressed():
 		print("------------Can Upgrade------------")
 		print("Global: ", GlobalPlayerVariables.max_available_cans);
 		print("Local: ", player.max_available_cans);
+		
+		#update shop cost
+		GlobalPlayerVariables.can_amount_cost += 10;
+		#update the tooltip
+		($MarginContainer/VBoxContainer/playercanupgrade).tooltip_text = "Increase Max Number of Trashcans Held by Player
+		Costs: "+ str(GlobalPlayerVariables.can_amount_cost) + " Dollars"
 
 
 
 func _on_playerheldupgrade_pressed():
-	if(GlobalPlayerVariables.get_money() >= player_trash_capacity_cost):
-		subtract_money(player_trash_capacity_cost);
+	if(GlobalPlayerVariables.get_money() >= GlobalPlayerVariables.player_capacity_cost):
+		subtract_money(GlobalPlayerVariables.player_capacity_cost);
 		GlobalPlayerVariables.set_max_capacity(GlobalPlayerVariables.get_max_capacity() + 1);
 		player.update_values();
 		print("------------Player Capacity Upgrade------------")
 		print("Global: ", GlobalPlayerVariables.get_max_capacity());
 		print("Local: ", player.get_max_capacity());
 		print("$", GlobalPlayerVariables.get_money())
-	# Replace with function body.
+		
+		#update price
+		GlobalPlayerVariables.player_capacity_cost += 10;
+		#
+		($MarginContainer/VBoxContainer/playerheldupgrade).tooltip_text = "Increases how much garbage the player can hold.
+		Costs: "+ str(GlobalPlayerVariables.player_capacity_cost) + " Dollars"
+	
 
 func _on_trashcanupgrade_pressed():
 	#trashcan capacity increased
-	if(GlobalPlayerVariables.get_money() >= trash_can_can_capacity_cost):
-		subtract_money(trash_can_can_capacity_cost);
+	if(GlobalPlayerVariables.get_money() >= GlobalPlayerVariables.can_capacity_cost):
+		subtract_money(GlobalPlayerVariables.can_capacity_cost);
 		GlobalPlayerVariables.set_trash_can_capacity(GlobalPlayerVariables.get_trash_can_capacity() + 1)
 		print("------------Can Capacity Upgrade------------")
 		print("Global: ", GlobalPlayerVariables.get_trash_can_capacity());
+		
+		GlobalPlayerVariables.can_capacity_cost += 10;
+		($MarginContainer/VBoxContainer/trashcanupgrade).tooltip_text = "Increases the amount of trash the Trashcans can hold.
+		Costs: "+ str(GlobalPlayerVariables.can_capacity_cost) + " Dollars"
 	
 func _on_restore_pressed():
-	if(GlobalPlayerVariables.get_money() >= city_health_restore_cost):
-		subtract_money(city_health_restore_cost);
+	if(GlobalPlayerVariables.get_money() >= GlobalPlayerVariables.city_restore_cost):
+		subtract_money(GlobalPlayerVariables.city_restore_cost);
 		GlobalPlayerVariables.set_city_happiness(GlobalPlayerVariables.get_city_max_happiness());
+		GlobalPlayerVariables.city_restore_cost += 10;
+		
+		($MarginContainer/VBoxContainer/Restore).tooltip_text = "Restores Cleanliness to the City
+		Costs: "+ str(GlobalPlayerVariables.city_restore_cost) + " Dollars"
 	
 	
+func _on_decrease_pressed():
+	if EnemySpawner.shopcorrector < 0.3:
+		if(GlobalPlayerVariables.get_money() >= GlobalPlayerVariables.enemy_decrease_cost):
+			subtract_money(GlobalPlayerVariables.enemy_decrease_cost);
+			EnemySpawner.increase_difficulty(-0.1)
+			EnemySpawner.shopcorrector += 0.1
+			GlobalPlayerVariables.enemy_decrease_cost += 10;
+			($MarginContainer/VBoxContainer/decrease).tooltip_text = "Slightly decrease enemy spawn during the next night.
+			Costs: "+ str(GlobalPlayerVariables.enemy_decrease_cost) + " Dollars"
+			
+			if (EnemySpawner.shopcorrector >= 0.3):
+				($MarginContainer/VBoxContainer/decrease).text = "Sold out!"
+	else:
+		($MarginContainer/VBoxContainer/decrease).text = "Sold out!"
+		print('You already purchased this 3 times!')
 
 func _on_back_to_level_pressed():
 	get_tree().change_scene_to_file("res://Scenes/night_scene/night.tscn")
@@ -73,14 +109,4 @@ func _on_back_to_level_pressed():
 func subtract_money(val):
 	GlobalPlayerVariables.subtract_money(val);
 	get_parent().get_node("Camera2D/UI_Money").set_text(str(GlobalPlayerVariables.get_money()))
-
-
-func _on_decrease_pressed():
-	if EnemySpawner.shopcorrector < 0.3:
-		if(GlobalPlayerVariables.get_money() >= enemy_spawn_decrease_cost):
-			subtract_money(enemy_spawn_decrease_cost);
-			EnemySpawner.increase_difficulty(-0.1)
-			EnemySpawner.shopcorrector += 0.1
-	else:
-		print('You already purchased this 3 times!')
 	

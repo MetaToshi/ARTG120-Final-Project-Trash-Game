@@ -73,6 +73,7 @@ layout_mode = 2
 tooltip_text = "Increase Max Number of Trashcans Held by Player
 Costs: 10 Dollars"
 mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 0
 text = "Increase Player Garbage Can Capacity"
 
 [node name="playerheldupgrade" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
