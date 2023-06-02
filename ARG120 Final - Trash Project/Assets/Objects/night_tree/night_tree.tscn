@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ybyjkfyaq7o5" path="res://Assets/Sprites/Flora/120 - NightTree.png" id="1_lgsjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2q8rf"]
-size = Vector2(53, 29)
+size = Vector2(60, 124)
 
 [node name="Night_Tree" type="RigidBody2D"]
 script = ExtResource("1_ekr4p")
@@ -13,5 +13,5 @@ script = ExtResource("1_ekr4p")
 texture = ExtResource("1_lgsjh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 49.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_2q8rf")

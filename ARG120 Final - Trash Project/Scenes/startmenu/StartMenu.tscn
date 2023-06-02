@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjdmaj822eidr"]
+[gd_scene load_steps=3 format=3 uid="uid://bjdmaj822eidr"]
 
 [ext_resource type="Script" path="res://Scenes/startmenu/StartMenu.gd" id="1_nu5id"]
+[ext_resource type="Texture2D" uid="uid://dksgsdkq5ionm" path="res://Assets/Sprites/ScrollingCity/long dayscene background.png" id="2_de6er"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -57,7 +58,7 @@ offset_top = -69.72
 offset_right = 150.16
 offset_bottom = 0.279999
 theme_override_font_sizes/font_size = 48
-text = "Trash Game"
+text = "Disposable"
 horizontal_alignment = 1
 uppercase = true
 
@@ -66,6 +67,11 @@ layout_mode = 0
 offset_right = 1918.0
 offset_bottom = 1075.0
 color = Color(0.509804, 0.337255, 1, 1)
+
+[node name="LongDaysceneBackground" type="Sprite2D" parent="."]
+position = Vector2(717, 447)
+scale = Vector2(0.646088, 0.634722)
+texture = ExtResource("2_de6er")
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
