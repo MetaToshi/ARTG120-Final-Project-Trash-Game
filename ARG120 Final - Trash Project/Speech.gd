@@ -8,11 +8,11 @@ var current_text = ""
 @onready var lbltext = get_node("VBoxContainer/Label")
 @onready var ninerect = get_node("VBoxContainer/Label/NinePatchRect")
 @onready var timer = get_node("Timer")
-@onready var trashtalker = get_node("ParallaxBackground/ParallaxLayer2/Sprite2D")
+@onready var trashtalker = get_node("day_scene/ParallaxBackground/ParallaxLayer2")
 
 var do_close = false
 var rng = RandomNumberGenerator.new()
-
+var pos
 
 
 func _ready():
@@ -42,7 +42,7 @@ func _on_timer_timeout():
 		bubble_text_length = bubble_text.length()
 		bubble_text_index = 0
 		current_text = ""
-		lbltext.get_parent().hide()
+		#lbltext.get_parent().hide()
 #		queue_free()
 
 func setRandomDialogue():
@@ -73,6 +73,6 @@ func setRandomDialogue():
 			chosen_string = "Utilities should be publicly owned!"
 	return chosen_string
 
-#func _update():
-#	if(trashtalker.position % -500):
-#		lbltext.get_parent().hide()
+func _update():
+	pass
+
