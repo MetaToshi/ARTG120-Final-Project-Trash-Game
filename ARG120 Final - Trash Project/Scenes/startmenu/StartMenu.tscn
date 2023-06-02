@@ -73,6 +73,27 @@ position = Vector2(717, 447)
 scale = Vector2(0.646088, 0.634722)
 texture = ExtResource("2_de6er")
 
+[node name="temp controls" type="Label" parent="."]
+top_level = true
+layout_mode = 2
+anchor_left = 0.502
+anchor_top = 0.409
+anchor_right = 0.502
+anchor_bottom = 0.409
+offset_left = 58.16
+offset_top = -0.720001
+offset_right = 201.16
+offset_bottom = 84.28
+theme_override_font_sizes/font_size = 10
+text = "Controls: 
+wasd to move
+E to place trashcans
+Q to empty trashcans
+R to pick up Trashcans
+"
+horizontal_alignment = 1
+uppercase = true
+
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
