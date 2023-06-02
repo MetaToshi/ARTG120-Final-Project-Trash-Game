@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfqmiogig2xpm"]
+
+[ext_resource type="Script" path="res://Speech.gd" id="1_uck1p"]
+[ext_resource type="Texture2D" uid="uid://75yo54ouixhr" path="res://Assets/Sprites/SpeechBubble/speechsquare.png" id="2_7d837"]
+
+[node name="Speech" type="Node2D"]
+script = ExtResource("1_uck1p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7d837")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

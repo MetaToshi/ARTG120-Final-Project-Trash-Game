@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dreprla4p16ug"]
+[gd_scene load_steps=11 format=3 uid="uid://dreprla4p16ug"]
 
 [ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="1_xwrqd"]
 [ext_resource type="PackedScene" uid="uid://cicbix1jau3nl" path="res://Scenes/UI/ui_cans.tscn" id="2_buod3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d11j02whvn3xy" path="res://Assets/Sprites/ScrollingCity/2110.w026.n002.959B.p1.959.jpg" id="6_70rfj"]
 [ext_resource type="Script" path="res://Scenes/day_scene/ParallaxBackground.gd" id="6_xh1s8"]
 [ext_resource type="Texture2D" uid="uid://dpg115jtyuc62" path="res://Assets/Sprites/ScrollingCity/talkingshit.png" id="8_b3mmc"]
+[ext_resource type="PackedScene" uid="uid://cfqmiogig2xpm" path="res://Assets/Sprites/SpeechBubble/speech.tscn" id="9_pxmps"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bprjq"]
 vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
@@ -152,18 +153,22 @@ motion_mirroring = Vector2(1950, 2667)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(0, -32)
+position = Vector2(24, -56)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_70rfj")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(168, 168)
+position = Vector2(1000, 160)
 motion_mirroring = Vector2(500, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_repeat = 2
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("8_b3mmc")
+
+[node name="Speech" parent="ParallaxBackground/ParallaxLayer2/Sprite2D" instance=ExtResource("9_pxmps")]
+position = Vector2(0, -120)
+scale = Vector2(2.5, 2.5)
 
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playercanupgrade" to="Shop" method="_on_playercanupgrade_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/playerheldupgrade" to="Shop" method="_on_playerheldupgrade_pressed"]
