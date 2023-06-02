@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cj2oq5d2x6n05"]
+[gd_scene load_steps=23 format=3 uid="uid://cj2oq5d2x6n05"]
 
 [ext_resource type="Script" path="res://Assets/Characters/Enemies/Trash_Enemy/enemy_cow.gd" id="1_cvq14"]
 [ext_resource type="Texture2D" uid="uid://7nmyekqcbi5c" path="res://Assets/Sprites/Enemies/120 - TrashMonster1-Sheet.png" id="2_quhaq"]
@@ -6,6 +6,21 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhinj"]
 radius = 6.0
 height = 26.0
+
+[sub_resource type="Animation" id="Animation_qj1nh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(5, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_myqf3"]
 resource_name = "idleright"
@@ -26,6 +41,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_3ceim"]
 resource_name = "walkright"
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,9 +55,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [3, 4]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(5, 0), Vector2i(4, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4l71j"]
 _data = {
+"RESET": SubResource("Animation_qj1nh"),
 "idleright": SubResource("Animation_myqf3"),
 "walkright": SubResource("Animation_3ceim")
 }
@@ -121,7 +150,7 @@ position = Vector2(-2, 0.999992)
 scale = Vector2(0.515625, 0.515625)
 texture = ExtResource("2_quhaq")
 hframes = 6
-frame = 3
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 7)
