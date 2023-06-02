@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://Scenes/day_scene/Shop.gd" id="2_qa2x0"]
 [ext_resource type="PackedScene" uid="uid://tq65at8el15x" path="res://Scenes/UI/town_health_bar.tscn" id="3_n7h6a"]
 [ext_resource type="PackedScene" uid="uid://d4db5amylgsg7" path="res://Scenes/UI/ui_money.tscn" id="4_6m5d3"]
-[ext_resource type="Texture2D" uid="uid://d11j02whvn3xy" path="res://Assets/Sprites/ScrollingCity/2110.w026.n002.959B.p1.959.jpg" id="6_70rfj"]
 [ext_resource type="Script" path="res://Scenes/day_scene/ParallaxBackground.gd" id="6_xh1s8"]
-[ext_resource type="Texture2D" uid="uid://dpg115jtyuc62" path="res://Assets/Sprites/ScrollingCity/talkingshit.png" id="8_b3mmc"]
+[ext_resource type="Texture2D" uid="uid://dksgsdkq5ionm" path="res://Assets/Sprites/ScrollingCity/long dayscene background.png" id="7_xdv4n"]
+[ext_resource type="Texture2D" uid="uid://b6kla6ag1rgab" path="res://Assets/Sprites/ScrollingCity/NPC.png" id="8_1bybb"]
 [ext_resource type="PackedScene" uid="uid://cfqmiogig2xpm" path="res://Assets/Sprites/SpeechBubble/speech.tscn" id="9_pxmps"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bprjq"]
@@ -153,9 +153,9 @@ motion_mirroring = Vector2(1950, 2667)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(24, -56)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_70rfj")
+position = Vector2(538.25, 162.5)
+scale = Vector2(0.665524, 0.445833)
+texture = ExtResource("7_xdv4n")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1000, 160)
@@ -163,8 +163,9 @@ motion_mirroring = Vector2(500, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_repeat = 2
+position = Vector2(-2, 15)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_b3mmc")
+texture = ExtResource("8_1bybb")
 
 [node name="Speech" parent="ParallaxBackground/ParallaxLayer2/Sprite2D" instance=ExtResource("9_pxmps")]
 position = Vector2(0, -120)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2havtse0trim"]
+[gd_scene load_steps=36 format=3 uid="uid://c2havtse0trim"]
 
 [ext_resource type="Script" path="res://Assets/Characters/Player/player.gd" id="1_n3clx"]
 [ext_resource type="PackedScene" uid="uid://dmgxx6ld7dnig" path="res://Assets/Objects/bar/bar.tscn" id="3_mnml5"]
@@ -6,7 +6,40 @@
 [ext_resource type="PackedScene" uid="uid://c5ycras7341kk" path="res://Assets/Objects/number_trash_icon/Remaining_Cans_Number.tscn" id="4_588re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1ygo"]
-size = Vector2(10.5, 6.5)
+size = Vector2(10, 6)
+
+[sub_resource type="Animation" id="Animation_23fdn"]
+resource_name = "Idle_TrashMan"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_cj071"]
+resource_name = "LeftRun_TrashMan"
+length = 1.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
 
 [sub_resource type="Animation" id="Animation_d0mh2"]
 length = 0.001
@@ -19,7 +52,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 tracks/1/type = "value"
@@ -35,6 +68,37 @@ tracks/1/keys = {
 "values": [1]
 }
 
+[sub_resource type="Animation" id="Animation_dwymk"]
+resource_name = "RightIdle_TrashMan"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_4np7g"]
+resource_name = "RightRun_TrashMan"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 7, 9]
+}
+
 [sub_resource type="Animation" id="Animation_h0dkm"]
 resource_name = "idle_down"
 length = 0.4
@@ -48,7 +112,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 1]
 }
 
@@ -65,13 +129,13 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
+"update": 0,
+"values": [8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_310dt"]
 resource_name = "idle_right"
-length = 0.6
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -80,10 +144,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [5, 6]
+"update": 0,
+"values": [12, 13]
 }
 
 [sub_resource type="Animation" id="Animation_fqys8"]
@@ -99,7 +163,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [4, 5]
 }
 
@@ -116,13 +180,13 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_hvi4i"]
 resource_name = "walk_left"
-length = 0.8
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -131,15 +195,15 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [2, 3, 4, 3]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10, 11]
 }
 
 [sub_resource type="Animation" id="Animation_0ixk8"]
 resource_name = "walk_right"
-length = 0.8
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -148,10 +212,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [9, 7, 8, 7]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [14, 15]
 }
 
 [sub_resource type="Animation" id="Animation_j7a5v"]
@@ -167,13 +231,17 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [6, 7]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7y0el"]
 _data = {
+"LeftIdle_TrashMan": SubResource("Animation_23fdn"),
+"LeftRun_TrashMan": SubResource("Animation_cj071"),
 "RESET": SubResource("Animation_d0mh2"),
+"RightIdle_TrashMan": SubResource("Animation_dwymk"),
+"RightRun_TrashMan": SubResource("Animation_4np7g"),
 "idle_down": SubResource("Animation_h0dkm"),
 "idle_left": SubResource("Animation_uug1m"),
 "idle_right": SubResource("Animation_310dt"),
@@ -185,10 +253,10 @@ _data = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ae7xs"]
-animation = &"idle_left"
+animation = &"idle_down"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fugq4"]
-animation = &"idle_right"
+animation = &"idle_up"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jhfab"]
 animation = &"idle_left"
@@ -198,9 +266,9 @@ animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_edp3h"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_ae7xs")
-blend_point_0/pos = Vector2(0, 0.1)
+blend_point_0/pos = Vector2(0, 1.1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_fugq4")
-blend_point_1/pos = Vector2(0, -0.1)
+blend_point_1/pos = Vector2(0, -1.1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_jhfab")
 blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_fxog2")
@@ -210,24 +278,24 @@ max_space = Vector2(1, 1.1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c45w7"]
-animation = &"walk_left"
+animation = &"walk_down"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_he0d6"]
 animation = &"walk_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n68a7"]
-animation = &"walk_right"
+animation = &"walk_up"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u31dp"]
 animation = &"walk_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_clixa"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_c45w7")
-blend_point_0/pos = Vector2(0, 0.1)
+blend_point_0/pos = Vector2(0, 1.1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_he0d6")
 blend_point_1/pos = Vector2(1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_n68a7")
-blend_point_2/pos = Vector2(0, -0.1)
+blend_point_2/pos = Vector2(0, -1.1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_u31dp")
 blend_point_3/pos = Vector2(-1, 0)
 min_space = Vector2(-1, -1.1)
@@ -248,25 +316,22 @@ states/Start/position = Vector2(250, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_clixa")
 states/Walk/position = Vector2(570, 100)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_sbrpf"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_kk2am"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_r5f26")]
-graph_offset = Vector2(-2, -48)
+graph_offset = Vector2(-42, -17)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bk0dw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpjs2"]
-radius = 12.0
-height = 36.0
+height = 26.0
 
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_n3clx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -3)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_1m1en")
-hframes = 10
+position = Vector2(0, -10)
+hframes = 4
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.25, 7.25)
 shape = SubResource("RectangleShape2D_q1ygo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -279,7 +344,7 @@ tree_root = SubResource("AnimationNodeStateMachine_h368w")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_bk0dw")
-parameters/Idle/blend_position = Vector2(-0.00164473, 0.93454)
+parameters/Idle/blend_position = Vector2(0, 0.1)
 parameters/Walk/blend_position = Vector2(-0.268505, 0.235371)
 
 [node name="Bar" parent="." instance=ExtResource("3_mnml5")]
@@ -290,10 +355,9 @@ offset_right = -15.0
 offset_bottom = -23.0
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 2)
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_dpjs2")
 
 [node name="Remaining_Cans_Number" parent="." instance=ExtResource("4_588re")]
@@ -304,7 +368,6 @@ offset_right = -13.0
 offset_bottom = -24.0
 
 [node name="Spritesheet" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.617188, 0.617188)
 texture = ExtResource("4_1m1en")
 hframes = 10
