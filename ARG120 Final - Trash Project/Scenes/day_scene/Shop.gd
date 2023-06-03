@@ -44,6 +44,8 @@ func _on_playercanupgrade_pressed():
 		#update the tooltip
 		($MarginContainer/VBoxContainer/playercanupgrade).tooltip_text = "Increase Max Number of Trashcans Held by Player
 		Costs: "+ str(GlobalPlayerVariables.can_amount_cost) + " Dollars"
+		
+		($MarginContainer/VBoxContainer/playercanupgrade).text = "Increase Player Garbage Can Capacity    $" + str(GlobalPlayerVariables.can_amount_cost);
 
 
 
@@ -62,6 +64,8 @@ func _on_playerheldupgrade_pressed():
 		#
 		($MarginContainer/VBoxContainer/playerheldupgrade).tooltip_text = "Increases how much garbage the player can hold.
 		Costs: "+ str(GlobalPlayerVariables.player_capacity_cost) + " Dollars"
+		
+		($MarginContainer/VBoxContainer/playerheldupgrade).text = "Increase Player Held Garbage Capacity   $" + str(GlobalPlayerVariables.player_capacity_cost);
 	
 
 func _on_trashcanupgrade_pressed():
@@ -75,6 +79,8 @@ func _on_trashcanupgrade_pressed():
 		GlobalPlayerVariables.can_capacity_cost += 10;
 		($MarginContainer/VBoxContainer/trashcanupgrade).tooltip_text = "Increases the amount of trash the Trashcans can hold.
 		Costs: "+ str(GlobalPlayerVariables.can_capacity_cost) + " Dollars"
+		
+		($MarginContainer/VBoxContainer/trashcanupgrade).text = "Increase Garbage Can Held Garbage Capacity  $" + str(GlobalPlayerVariables.can_capacity_cost);
 	
 func _on_restore_pressed():
 	if(GlobalPlayerVariables.get_money() >= GlobalPlayerVariables.city_restore_cost):
@@ -84,6 +90,8 @@ func _on_restore_pressed():
 		
 		($MarginContainer/VBoxContainer/Restore).tooltip_text = "Restores Cleanliness to the City
 		Costs: "+ str(GlobalPlayerVariables.city_restore_cost) + " Dollars"
+		
+		($MarginContainer/VBoxContainer/Restore).text = "Restore City Cleanliness               $" + str(GlobalPlayerVariables.city_restore_cost);
 	
 	
 func _on_decrease_pressed():
@@ -95,6 +103,7 @@ func _on_decrease_pressed():
 			GlobalPlayerVariables.enemy_decrease_cost += 10;
 			($MarginContainer/VBoxContainer/decrease).tooltip_text = "Slightly decrease enemy spawn during the next night.
 			Costs: "+ str(GlobalPlayerVariables.enemy_decrease_cost) + " Dollars"
+			($MarginContainer/VBoxContainer/decrease).text = "Decrease Enemy Spawn                 $" + str(GlobalPlayerVariables.enemy_decrease_cost);
 			
 			if (EnemySpawner.shopcorrector >= 0.3):
 				($MarginContainer/VBoxContainer/decrease).text = "Sold out!"

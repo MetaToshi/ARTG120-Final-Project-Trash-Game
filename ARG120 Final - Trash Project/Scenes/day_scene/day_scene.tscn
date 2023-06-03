@@ -74,28 +74,28 @@ tooltip_text = "Increase Max Number of Trashcans Held by Player
 Costs: 10 Dollars"
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 0
-text = "Increase Player Garbage Can Capacity"
+text = "Increase Player Garbage Can Capacity    $10"
 
 [node name="playerheldupgrade" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Increases how much garbage the player can hold.
 Costs: 10 Dollars"
 mouse_default_cursor_shape = 2
-text = "Increase Player Held Garbage Capacity"
+text = "Increase Player Held Garbage Capacity   $10"
 
 [node name="trashcanupgrade" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Increases the amount of trash the Trashcans can hold.
 Costs: 10 Dollars"
 mouse_default_cursor_shape = 2
-text = "Increase Garbage Can Held Garbage Capacity"
+text = "Increase Garbage Can Held Garbage Capacity  $10"
 
 [node name="Restore" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Restores Cleanliness to the City
 Costs: 10 Dollars"
 mouse_default_cursor_shape = 2
-text = "Restore City Cleanliness"
+text = "Restore City Cleanliness               $10"
 
 [node name="decrease" type="Button" parent="Shop/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -103,7 +103,7 @@ tooltip_text = "Slightly decrease enemy spawn during the next night.
 Costs: 10 Dollars
 "
 mouse_default_cursor_shape = 2
-text = "Decrease Enemy Spawn"
+text = "Decrease Enemy Spawn                 $10 "
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Shop/MarginContainer"]
 layout_mode = 2
