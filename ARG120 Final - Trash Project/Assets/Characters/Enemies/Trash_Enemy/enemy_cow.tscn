@@ -23,7 +23,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_myqf3"]
-resource_name = "idleright"
+resource_name = "right"
 length = 4.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -40,7 +40,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_3ceim"]
-resource_name = "walkright"
+resource_name = "left"
 length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -71,21 +71,21 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4l71j"]
 _data = {
 "RESET": SubResource("Animation_qj1nh"),
-"idleright": SubResource("Animation_myqf3"),
-"walkright": SubResource("Animation_3ceim")
+"left": SubResource("Animation_3ceim"),
+"right": SubResource("Animation_myqf3")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_juihb"]
-animation = &"idleright"
+animation = &"left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ott4r"]
-animation = &"idleright"
+animation = &"right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u7p4m"]
-animation = &"idleright"
+animation = &"right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fsxmt"]
-animation = &"idleright"
+animation = &"left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_b4251"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_juihb")
@@ -100,16 +100,16 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qinj3"]
-animation = &"walkright"
+animation = &"left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qbc28"]
-animation = &"walkright"
+animation = &"right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gamjo"]
-animation = &"walkright"
+animation = &"left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lkq8m"]
-animation = &"walkright"
+animation = &"left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_k8bdu"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_qinj3")
@@ -168,7 +168,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_4e1et")
 parameters/idleright/blend_position = Vector2(-0.00160003, 0.0117021)
-parameters/walkright/blend_position = Vector2(0, 0)
+parameters/walkright/blend_position = Vector2(-0.999178, 0.0240176)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
