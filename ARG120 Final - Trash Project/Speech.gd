@@ -42,7 +42,7 @@ func _on_timer_timeout():
 		bubble_text_length = bubble_text.length()
 		bubble_text_index = 0
 		current_text = ""
-		#lbltext.get_parent().hide()
+		lbltext.get_parent().hide()
 #		queue_free()
 
 func setRandomDialogue():

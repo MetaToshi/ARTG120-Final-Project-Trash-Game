@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://bugv8plhd06ac"]
+
+[ext_resource type="Script" path="res://Scenes/control_page/control_page.gd" id="1_bsv1q"]
+[ext_resource type="Texture2D" uid="uid://dksgsdkq5ionm" path="res://Assets/Sprites/ScrollingCity/long dayscene background.png" id="1_lybum"]
+[ext_resource type="Script" path="res://Scenes/startmenu/titlescroll.gd" id="1_umcge"]
+
+[node name="control_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsv1q")
+
+[node name="temp controls" type="Label" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 149.0
+offset_top = 38.0
+offset_right = 336.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 6
+text = "Congratulations! You've been hired as the cities newest Santitation Specialist. The city was desperate for new Sanitation workers, so they are paying you pretty well!
+
+All you have to do is keep the city clean at night, 
+how hard could it be?
+
+
+Controls: 
+wasd to move
+Q to place trashcans
+E to pickup trash from trashcans
+E to dump your trash
+E to pickup empty trash Cans
+Run into trash monsters to pick them up
+
+
+Click to Start Work"
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_umcge")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+show_behind_parent = true
+position = Vector2(-679, -134)
+scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2900, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1148, 556)
+texture = ExtResource("1_lybum")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = -57.0
+offset_top = -32.0
+offset_right = 1920.0
+offset_bottom = 325.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="onclick" type="Button" parent="MarginContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/onclick" to="." method="_on_onclick_pressed"]

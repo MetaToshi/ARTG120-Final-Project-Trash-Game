@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjdmaj822eidr"]
+[gd_scene load_steps=4 format=3 uid="uid://bjdmaj822eidr"]
 
 [ext_resource type="Script" path="res://Scenes/startmenu/StartMenu.gd" id="1_nu5id"]
 [ext_resource type="Texture2D" uid="uid://dksgsdkq5ionm" path="res://Assets/Sprites/ScrollingCity/long dayscene background.png" id="2_de6er"]
+[ext_resource type="Script" path="res://Scenes/startmenu/titlescroll.gd" id="2_or34f"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -63,38 +64,24 @@ horizontal_alignment = 1
 uppercase = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1918.0
 offset_bottom = 1075.0
 color = Color(0.509804, 0.337255, 1, 1)
 
-[node name="LongDaysceneBackground" type="Sprite2D" parent="."]
-position = Vector2(717, 447)
-scale = Vector2(0.646088, 0.634722)
-texture = ExtResource("2_de6er")
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_or34f")
 
-[node name="temp controls" type="Label" parent="."]
-top_level = true
-layout_mode = 2
-anchor_left = 0.502
-anchor_top = 0.409
-anchor_right = 0.502
-anchor_bottom = 0.409
-offset_left = 49.1601
-offset_top = 0.279999
-offset_right = 236.16
-offset_bottom = 119.28
-theme_override_font_sizes/font_size = 10
-text = "Controls: 
-wasd to move
-Q to place trashcans
-E to pickup trash from trashcans
-E to dump your trash
-E to pickup empty trash Cans
-Run into trash to pick it up
-"
-horizontal_alignment = 1
-uppercase = true
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+show_behind_parent = true
+position = Vector2(-679, -134)
+scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2900, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1148, 556)
+texture = ExtResource("2_de6er")
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

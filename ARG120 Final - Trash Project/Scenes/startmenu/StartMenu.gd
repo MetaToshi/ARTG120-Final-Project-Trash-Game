@@ -6,7 +6,7 @@ func _ready():
 	
 
 func _on_start_game_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/night_scene/night.tscn")
+	get_tree().change_scene_to_file("res://Scenes/control_page/control_page.tscn")
 
 
 
