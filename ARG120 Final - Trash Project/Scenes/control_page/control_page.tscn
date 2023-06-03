@@ -22,11 +22,10 @@ offset_top = 38.0
 offset_right = 336.0
 offset_bottom = 290.0
 theme_override_font_sizes/font_size = 6
-text = "Congratulations! You've been hired as the cities newest Santitation Specialist. The city was desperate for new Sanitation workers, so they are paying you pretty well!
+text = "Congratulations! You've been hired as the cities newest Santitation Specialist. The city was desperate for new Sanitation workers, so they are paying you pretty well! However, Your pay is evaluated on your performance, the dirtier the city gets at night the less you get paid!
 
 All you have to do is keep the city clean at night, 
 how hard could it be?
-
 
 Controls: 
 wasd to move
@@ -35,7 +34,6 @@ E to pickup trash from trashcans
 E to dump your trash
 E to pickup empty trash Cans
 Run into trash monsters to pick them up
-
 
 Click to Start Work"
 horizontal_alignment = 1

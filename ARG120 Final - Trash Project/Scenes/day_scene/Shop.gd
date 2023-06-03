@@ -112,6 +112,7 @@ func _on_decrease_pressed():
 		print('You already purchased this 3 times!')
 
 func _on_back_to_level_pressed():
+	GlobalPlayerVariables.night_num += 1;
 	get_tree().change_scene_to_file("res://Scenes/night_scene/night.tscn")
 
 

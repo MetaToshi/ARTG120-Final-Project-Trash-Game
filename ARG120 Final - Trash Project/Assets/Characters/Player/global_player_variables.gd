@@ -3,7 +3,7 @@ extends Node
 #Player Variables
 @export var default_move_speed : float = 100;
 @export var default_starting_direction : Vector2 = Vector2(0,1);
-@export var default_starting_money : float = 100;
+@export var default_starting_money : float = 0;
 @export var default_max_capacity : int = 5;
 @export var default_currently_available_cans : int = 5;
 @export var default_max_available_cans : int = 5;
@@ -19,6 +19,10 @@ extends Node
 
 @export var default_daily_player_income : int = 80;
 @onready var daily_player_income : int = default_daily_player_income;
+
+@export var night_num : int = 1;
+
+
 
 #Shop Prices
 @export var default_can_amount_cost      : int = 10;
@@ -51,6 +55,7 @@ func RESET_TO_DEFAULT_VALUES():
 	
 	daily_player_income = default_daily_player_income;
 	
+	night_num = 1;
 	
 	#reset shop prices
 	can_amount_cost = default_can_amount_cost;
@@ -87,6 +92,11 @@ func subtract_money(val):
 func get_money():
 	return current_money;
 
+func set_night(val):
+	night_num = val;
+
+func get_night():
+	return night_num;
 
 @onready var trash_can_capacity = default_trash_can_capacity;
 

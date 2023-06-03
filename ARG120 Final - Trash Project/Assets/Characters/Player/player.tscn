@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c5ycras7341kk" path="res://Assets/Objects/number_trash_icon/Remaining_Cans_Number.tscn" id="4_588re"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ujpiq"]
-height = 34.75
+radius = 9.0
+height = 30.75
 
 [sub_resource type="Animation" id="Animation_d0mh2"]
 length = 0.001
