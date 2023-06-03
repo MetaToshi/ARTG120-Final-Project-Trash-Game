@@ -4,7 +4,7 @@ extends StaticBody2D
 var AnimationPlayed = false;
 
 func _ready():
-	$ColorRect.color.a = 120
+	$ColorRect.color.a = 150
 	change_to_day()
 
 func _on_timer_timeout():
