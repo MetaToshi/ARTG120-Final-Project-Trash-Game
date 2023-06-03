@@ -259,11 +259,11 @@ func _input(event):
 	# print("Global:", GlobalPlayerVariables.get_max_cans());
 	# print("Local:", max_available_cans);
 	if(event.is_action_pressed("pickup_trash")):
-		find_closest_can(true)
-		print("--------------------------------")
-		grab_trash_from_closest_can();
-	if(event.is_action_pressed("pickup_can")): 
-		pickup_empty_can();
+		find_closest_can(false)
+		if(closest_trashcan != null && closest_trashcan.get_current_capacity() == 0):
+			pickup_empty_can();
+		else:
+			grab_trash_from_closest_can();
 		
 		
 		
