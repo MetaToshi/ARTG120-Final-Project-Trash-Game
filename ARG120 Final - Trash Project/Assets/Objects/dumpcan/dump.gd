@@ -18,6 +18,7 @@ func get_dump():
 func _ready():
 	var a2d = $Area2D;
 	a2d.add_to_group("trashcan");
+	a2d.add_to_group("dump");
 	($Area2D/CollisionShape2D).shape.radius = full_radius;
 
 func _set_current_capacity(_val):
@@ -32,7 +33,9 @@ func remove_trash(_num):
 	print("Cannot remove any trash from the dump zone. (Or should it be changed?) - Wyatt");
 	assert(false)
 	pass
-	
+
+func get_current_capacity():
+	return int(1)
 	
 #on_empty_action runs whenever the player dumps their trash, probably where we should put an animation
 func on_empty_action():
