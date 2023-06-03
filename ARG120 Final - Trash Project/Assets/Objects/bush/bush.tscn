@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbjlg7gjq2jbc"]
+
+[ext_resource type="Texture2D" uid="uid://cgfo86kmi3fq" path="res://Assets/Sprites/Flora/120 - NightBush1.png" id="1_byolf"]
+[ext_resource type="Script" path="res://Assets/Objects/bush/bush.gd" id="1_xeryl"]
+
+[node name="Bush" type="RigidBody2D"]
+sleeping = true
+lock_rotation = true
+freeze = true
+script = ExtResource("1_xeryl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_byolf")

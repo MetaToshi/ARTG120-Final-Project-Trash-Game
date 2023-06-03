@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cs8s5b3o3ry0m"]
+[gd_scene load_steps=21 format=3 uid="uid://cs8s5b3o3ry0m"]
 
 [ext_resource type="Script" path="res://Scenes/night_scene/night.gd" id="1_mhorq"]
 [ext_resource type="PackedScene" uid="uid://c2havtse0trim" path="res://Assets/Characters/Player/player.tscn" id="2_b01mx"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b6rtuubsw5aqw" path="res://Scenes/night_scene/day_and_night.tscn" id="9_qlkrk"]
 [ext_resource type="PackedScene" uid="uid://ytlfys71ecdi" path="res://Assets/Objects/night_tree/night_tree.tscn" id="12_f1ybt"]
 [ext_resource type="PackedScene" uid="uid://kmsn3h0oxlfs" path="res://Assets/Characters/Player/Player_Camera.tscn" id="12_upixq"]
+[ext_resource type="PackedScene" uid="uid://cbjlg7gjq2jbc" path="res://Assets/Objects/bush/bush.tscn" id="14_hklxl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i4o1r"]
 vertices = PackedVector2Array(-591, -305, 1302, -305, 1302, 634, -591, 632)
@@ -582,6 +583,9 @@ z_index = 25
 y_sort_enabled = true
 position = Vector2(23, 28)
 
+[node name="Camera2D" parent="." instance=ExtResource("12_upixq")]
+position = Vector2(283, 198)
+
 [node name="Night_Tree" parent="." instance=ExtResource("12_f1ybt")]
 z_index = 5
 z_as_relative = false
@@ -702,5 +706,170 @@ position = Vector2(-205, 411)
 lock_rotation = true
 freeze = true
 
-[node name="Camera2D" parent="." instance=ExtResource("12_upixq")]
-position = Vector2(283, 198)
+[node name="Bush" parent="." instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(11, -3)
+
+[node name="Bush" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(705, -509)
+
+[node name="Bush2" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-728, 128)
+
+[node name="Bush3" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-277, -104)
+
+[node name="Bush4" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-116, -118)
+
+[node name="Bush5" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-198, 16)
+
+[node name="Bush6" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-703, -115)
+
+[node name="Bush7" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-527, -402)
+
+[node name="Bush8" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(505, -456)
+
+[node name="Bush9" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-113, 461)
+
+[node name="Bush10" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-578, 413)
+
+[node name="Bush11" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(604, 498)
+
+[node name="Bush12" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-211, 705)
+
+[node name="Bush13" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-344, 258)
+
+[node name="Bush14" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-644, 676)
+
+[node name="Bush15" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-1020, -2)
+
+[node name="Bush16" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-984, 224)
+
+[node name="Bush17" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-978, 468)
+
+[node name="Bush18" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(932, 226)
+
+[node name="Bush19" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(909, 555)
+
+[node name="Bush20" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(435, 653)
+
+[node name="Bush21" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(70, 628)
+
+[node name="Bush22" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(90, -530)
+
+[node name="Bush23" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-326, -593)
+
+[node name="Bush24" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-554, -577)
+
+[node name="Bush25" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-480, -245)
+
+[node name="Bush26" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(871, -294)
+
+[node name="Bush27" parent="Bush" instance=ExtResource("14_hklxl")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-550, 76)
