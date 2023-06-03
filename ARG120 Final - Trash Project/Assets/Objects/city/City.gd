@@ -11,6 +11,10 @@ func _ready():
 	city_health_bar = get_parent().get_node("Camera2D").get_node("Town_Health_Bar");
 	city_health_bar.set_max_health(max_happiness);
 	city_health_bar.set_current_value(starting_happiness);
+	
+	$"Town Health Bar".set_max_health(max_happiness);
+	$"Town Health Bar".set_current_value(starting_happiness);
+	
 	print("City is ", city_health_bar);
 	#Replace with function body.
 	
@@ -45,21 +49,25 @@ func set_max_happiness(val):
 	GlobalPlayerVariables.current_max_happiness = val;
 	update_values()
 	city_health_bar.set_current_value(current_happiness);
+	$"Town Health Bar".set_current_value(current_happiness);
 	
 func set_current_happiness(val):
 	GlobalPlayerVariables.current_happiness = clamp(val, 0, max_happiness);
 	update_values()
 	city_health_bar.set_current_value(current_happiness);
+	$"Town Health Bar".set_current_value(current_happiness);
 
 func add_to_current_happiness(val):
 	GlobalPlayerVariables.current_happiness = clamp(current_happiness + val, 0, max_happiness);
 	update_values()
 	city_health_bar.set_current_value(current_happiness);
+	$"Town Health Bar".set_current_value(current_happiness);
 
 func subtract_from_current_happiness(val):
 	GlobalPlayerVariables.current_happiness = clamp(current_happiness - val, 0, max_happiness);
 	update_values();
 	city_health_bar.set_current_value(current_happiness);
+	$"Town Health Bar".set_current_value(current_happiness);
 
 
 
