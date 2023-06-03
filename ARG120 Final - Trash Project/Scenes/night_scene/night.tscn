@@ -533,6 +533,8 @@ navigation_polygon = SubResource("NavigationPolygon_i4o1r")
 
 [node name="PlayerCat" parent="." instance=ExtResource("2_b01mx")]
 z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(283, 198)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
@@ -568,6 +570,7 @@ movement_target = NodePath("../Dump")
 
 [node name="City" parent="." instance=ExtResource("9_qdia8")]
 z_index = 5
+z_as_relative = false
 y_sort_enabled = true
 position = Vector2(350, 106)
 
@@ -580,76 +583,121 @@ y_sort_enabled = true
 position = Vector2(23, 28)
 
 [node name="Night_Tree" parent="." instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(1022, 326)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree2" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-142, -96)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree3" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(34, -352)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree5" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-1287, 379)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree4" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-459, 168)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree6" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-1089, 110)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree7" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-1630, 94)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree8" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-1657, -261)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree9" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-1219, -436)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree10" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-269, -395)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree11" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-1585, -749)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree12" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-1048, -779)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree13" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-640, -564)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree14" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-383, -834)
 lock_rotation = true
 freeze = true
 
 [node name="Night_Tree15" parent="Night_Tree" instance=ExtResource("12_f1ybt")]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-205, 411)
 lock_rotation = true
 freeze = true

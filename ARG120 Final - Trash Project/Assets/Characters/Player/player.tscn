@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ycras7341kk" path="res://Assets/Objects/number_trash_icon/Remaining_Cans_Number.tscn" id="4_588re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1ygo"]
-size = Vector2(10, 6)
+size = Vector2(22, 11.25)
 
 [sub_resource type="Animation" id="Animation_d0mh2"]
 length = 0.001
@@ -241,7 +241,8 @@ graph_offset = Vector2(-42, -17)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bk0dw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpjs2"]
-height = 26.0
+radius = 13.0
+height = 38.0
 
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_n3clx")
@@ -252,6 +253,7 @@ hframes = 4
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.625)
 shape = SubResource("RectangleShape2D_q1ygo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -268,7 +270,6 @@ parameters/Idle/blend_position = Vector2(0, 0.1)
 parameters/Walk/blend_position = Vector2(-0.1008, -0.0144104)
 
 [node name="Bar" parent="." instance=ExtResource("3_mnml5")]
-z_index = 5
 offset_left = -15.0
 offset_top = -23.0
 offset_right = -15.0
@@ -277,7 +278,7 @@ offset_bottom = -23.0
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -5)
+visible = false
 shape = SubResource("CapsuleShape2D_dpjs2")
 
 [node name="Remaining_Cans_Number" parent="." instance=ExtResource("4_588re")]
@@ -288,6 +289,7 @@ offset_right = -13.0
 offset_bottom = -24.0
 
 [node name="Spritesheet" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
 scale = Vector2(0.617188, 0.617188)
 texture = ExtResource("4_1m1en")
 hframes = 10
