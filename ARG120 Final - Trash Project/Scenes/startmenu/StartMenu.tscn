@@ -80,15 +80,16 @@ anchor_left = 0.502
 anchor_top = 0.409
 anchor_right = 0.502
 anchor_bottom = 0.409
-offset_left = 58.16
-offset_top = -0.720001
-offset_right = 201.16
-offset_bottom = 84.28
+offset_left = 49.1601
+offset_top = 0.279999
+offset_right = 236.16
+offset_bottom = 119.28
 theme_override_font_sizes/font_size = 10
 text = "Controls: 
 wasd to move
 Q to place trashcans
 E to pickup trash from trashcans
+E to dump your trash
 E to pickup empty trash Cans
 Run into trash to pick it up
 "
