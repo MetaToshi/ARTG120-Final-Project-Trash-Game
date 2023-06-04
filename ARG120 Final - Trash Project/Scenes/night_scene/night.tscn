@@ -581,7 +581,7 @@ position = Vector2(27, 16)
 [node name="day_and_night" parent="." instance=ExtResource("9_qlkrk")]
 z_index = 25
 y_sort_enabled = true
-position = Vector2(23, 28)
+position = Vector2(-51, 54)
 
 [node name="Camera2D" parent="." instance=ExtResource("12_upixq")]
 position = Vector2(283, 198)
@@ -686,7 +686,7 @@ freeze = true
 z_index = 5
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(-640, -564)
+position = Vector2(-681, -564)
 lock_rotation = true
 freeze = true
 

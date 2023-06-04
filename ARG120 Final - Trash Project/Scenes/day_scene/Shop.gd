@@ -24,10 +24,9 @@ func _ready():
 	#Give player $80 for the day
 	GlobalPlayerVariables.add_money(GlobalPlayerVariables.daily_player_income);
 	get_parent().get_node("Camera2D/UI_Money").set_text(str(GlobalPlayerVariables.get_money()))
-	
+	set_text_costs();
 	update_bar();
-	
-	
+
 	
 
 func _on_playercanupgrade_pressed():
@@ -42,7 +41,6 @@ func _on_playercanupgrade_pressed():
 		print("------------Can Upgrade------------")
 		print("Global: ", GlobalPlayerVariables.max_available_cans);
 		print("Local: ", player.max_available_cans);
-		
 		#update shop cost
 		GlobalPlayerVariables.can_amount_cost += 10;
 		#update the tooltip
@@ -130,3 +128,26 @@ func subtract_money(val):
 func update_bar():
 	get_parent().get_node("Camera2D/Town Health Bar").set_max_health(GlobalPlayerVariables.current_max_happiness);
 	get_parent().get_node("Camera2D/Town Health Bar").set_current_value(GlobalPlayerVariables.current_happiness);
+
+func set_text_costs():
+	($MarginContainer/VBoxContainer/playercanupgrade).text = "Increase Player Garbage Can Capacity    $" + str(GlobalPlayerVariables.can_amount_cost);			
+	($MarginContainer/VBoxContainer/playercanupgrade).tooltip_text = "Increase Max Number of Trashcans Held by Player
+	Costs: "+ str(GlobalPlayerVariables.can_amount_cost) + " Dollars"
+		
+	($MarginContainer/VBoxContainer/playerheldupgrade).tooltip_text = "Increases how much garbage the player can hold.
+	Costs: "+ str(GlobalPlayerVariables.player_capacity_cost) + " Dollars"
+	($MarginContainer/VBoxContainer/playerheldupgrade).text = "Increase Player Held Garbage Capacity   $" + str(GlobalPlayerVariables.player_capacity_cost);
+		
+	($MarginContainer/VBoxContainer/trashcanupgrade).tooltip_text = "Increases the amount of trash the Trashcans can hold.
+	Costs: "+ str(GlobalPlayerVariables.can_capacity_cost) + " Dollars"
+	($MarginContainer/VBoxContainer/trashcanupgrade).text = "Increase Garbage Can Held Garbage Capacity  $" + str(GlobalPlayerVariables.can_capacity_cost);
+		
+	($MarginContainer/VBoxContainer/Restore).tooltip_text = "Restores Cleanliness to the City
+	Costs: "+ str(GlobalPlayerVariables.city_restore_cost) + " Dollars"
+	($MarginContainer/VBoxContainer/Restore).text = "Restore City Cleanliness               $" + str(GlobalPlayerVariables.city_restore_cost);
+		
+	($MarginContainer/VBoxContainer/decrease).tooltip_text = "Slightly decrease enemy spawn during the next night.
+	Costs: "+ str(GlobalPlayerVariables.enemy_decrease_cost) + " Dollars"
+	($MarginContainer/VBoxContainer/decrease).text = "Decrease Enemy Spawn                 $" + str(GlobalPlayerVariables.enemy_decrease_cost);
+			
+	
