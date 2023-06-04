@@ -256,8 +256,12 @@ func delete_value(value):
 	touched_trashcans.erase(value);
 	
 func _input(event):
-	# print("Global:", GlobalPlayerVariables.get_max_cans());
-	# print("Local:", max_available_cans);
+	
+	#disable all player controls in the day scene
+	if(get_parent().name == "day_scene"):
+			return;
+			
+			
 	if(event.is_action_pressed("pickup_trash")):
 		find_closest_can(false)
 		if(closest_trashcan != null && closest_trashcan.get_current_capacity() == 0):
