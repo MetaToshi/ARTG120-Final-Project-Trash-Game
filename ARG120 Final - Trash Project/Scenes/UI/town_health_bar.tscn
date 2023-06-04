@@ -19,7 +19,7 @@ corner_radius_bottom_left = 25
 [node name="Town Health Bar" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 41.0
+offset_right = 187.0
 offset_bottom = 40.0
 script = ExtResource("1_77363")
 

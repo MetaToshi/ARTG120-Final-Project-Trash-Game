@@ -25,6 +25,10 @@ func _ready():
 	GlobalPlayerVariables.add_money(GlobalPlayerVariables.daily_player_income);
 	get_parent().get_node("Camera2D/UI_Money").set_text(str(GlobalPlayerVariables.get_money()))
 	
+	update_bar();
+	
+	
+	
 
 func _on_playercanupgrade_pressed():
 	if(GlobalPlayerVariables.get_money() >= GlobalPlayerVariables.can_amount_cost):
@@ -88,6 +92,8 @@ func _on_restore_pressed():
 		GlobalPlayerVariables.set_city_happiness(GlobalPlayerVariables.get_city_max_happiness());
 		GlobalPlayerVariables.city_restore_cost += 10;
 		
+		update_bar()
+		
 		($MarginContainer/VBoxContainer/Restore).tooltip_text = "Restores Cleanliness to the City
 		Costs: "+ str(GlobalPlayerVariables.city_restore_cost) + " Dollars"
 		
@@ -120,3 +126,7 @@ func subtract_money(val):
 	GlobalPlayerVariables.subtract_money(val);
 	get_parent().get_node("Camera2D/UI_Money").set_text(str(GlobalPlayerVariables.get_money()))
 	
+
+func update_bar():
+	get_parent().get_node("Camera2D/Town Health Bar").set_max_health(GlobalPlayerVariables.current_max_happiness);
+	get_parent().get_node("Camera2D/Town Health Bar").set_current_value(GlobalPlayerVariables.current_happiness);

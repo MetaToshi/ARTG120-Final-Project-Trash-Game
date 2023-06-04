@@ -150,6 +150,12 @@ offset_right = 184.0
 offset_bottom = -184.0
 grow_horizontal = 0
 
+[node name="Town Health Bar" parent="Camera2D" instance=ExtResource("3_n7h6a")]
+offset_left = -230.0
+offset_top = -269.0
+offset_right = -43.0
+offset_bottom = -229.0
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 process_mode = 3
 script = ExtResource("6_xh1s8")
