@@ -151,3 +151,7 @@ func set_text_costs():
 	($MarginContainer/VBoxContainer/decrease).text = "Decrease Enemy Spawn                 $" + str(GlobalPlayerVariables.enemy_decrease_cost);
 			
 	
+
+
+func _on_quit_pressed():
+		get_tree().change_scene_to_file("res://Scenes/gameover/game_over.tscn")

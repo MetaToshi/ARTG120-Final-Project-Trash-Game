@@ -44,7 +44,7 @@ anchor_bottom = 0.319
 offset_left = 267.776
 offset_top = 108.128
 offset_right = 673.776
-offset_bottom = 412.128
+offset_bottom = 476.128
 scale = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Shop/MarginContainer"]
@@ -116,6 +116,13 @@ tooltip_text = "Get Back to Work!"
 mouse_default_cursor_shape = 2
 text = "Back to Work!"
 
+[node name="quit" type="Button" parent="Shop/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "This job just ain't worth it..."
+mouse_default_cursor_shape = 2
+text = "Quit the Job"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(240, 280)
 enabled = false
@@ -158,6 +165,7 @@ offset_bottom = -229.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("6_xh1s8")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -189,3 +197,4 @@ scale = Vector2(2.5, 2.5)
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/Restore" to="Shop" method="_on_restore_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer/decrease" to="Shop" method="_on_decrease_pressed"]
 [connection signal="pressed" from="Shop/MarginContainer/VBoxContainer2/back_to_level" to="Shop" method="_on_back_to_level_pressed"]
+[connection signal="pressed" from="Shop/MarginContainer/VBoxContainer2/quit" to="Shop" method="_on_quit_pressed"]
