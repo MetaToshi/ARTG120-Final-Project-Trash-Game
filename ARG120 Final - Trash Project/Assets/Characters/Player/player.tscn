@@ -245,6 +245,7 @@ radius = 13.0
 height = 38.0
 
 [node name="PlayerCat" type="CharacterBody2D"]
+position = Vector2(0, -12)
 script = ExtResource("1_n3clx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -274,6 +275,7 @@ offset_left = -15.0
 offset_top = -23.0
 offset_right = -15.0
 offset_bottom = -23.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
@@ -289,9 +291,10 @@ offset_right = -13.0
 offset_bottom = -24.0
 
 [node name="Spritesheet" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-1, 8)
 scale = Vector2(0.617188, 0.617188)
 texture = ExtResource("4_1m1en")
+offset = Vector2(0, -10)
 hframes = 10
 frame = 1
 
