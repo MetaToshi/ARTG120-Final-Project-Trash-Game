@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5wk3772n7272" path="res://Assets/Objects/city/City.tscn" id="9_qdia8"]
 [ext_resource type="PackedScene" uid="uid://b6rtuubsw5aqw" path="res://Scenes/night_scene/day_and_night.tscn" id="9_qlkrk"]
 [ext_resource type="PackedScene" uid="uid://ytlfys71ecdi" path="res://Assets/Objects/night_tree/night_tree.tscn" id="12_f1ybt"]
-[ext_resource type="PackedScene" uid="uid://b5e1prjkx5t7e" path="res://Assets/Characters/Player/Player_Camera.tscn" id="12_upixq"]
+[ext_resource type="PackedScene" uid="uid://kmsn3h0oxlfs" path="res://Assets/Characters/Player/Player_Camera.tscn" id="12_upixq"]
 [ext_resource type="PackedScene" uid="uid://cbjlg7gjq2jbc" path="res://Assets/Objects/bush/bush.tscn" id="14_hklxl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i4o1r"]
