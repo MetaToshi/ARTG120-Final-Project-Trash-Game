@@ -79,7 +79,7 @@ script = ExtResource("2_or34f")
 show_behind_parent = true
 position = Vector2(-679, -134)
 scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(2800, 0)
+motion_mirroring = Vector2(1491, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(1148, 556)
