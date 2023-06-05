@@ -31,6 +31,7 @@ position = Vector2(3, -6.5)
 shape = SubResource("RectangleShape2D_70o6p")
 
 [node name="Town Health Bar" parent="." instance=ExtResource("3_hpcly")]
+visible = false
 offset_left = -87.0
 offset_top = -82.0
 offset_right = -46.0
