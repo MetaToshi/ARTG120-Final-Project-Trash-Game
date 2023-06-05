@@ -5,9 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://blvk8r7wvx800" path="res://Assets/Sprites/Player/spritesheet.png" id="4_1m1en"]
 [ext_resource type="PackedScene" uid="uid://c5ycras7341kk" path="res://Assets/Objects/number_trash_icon/Remaining_Cans_Number.tscn" id="4_588re"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ujpiq"]
-radius = 9.0
-height = 30.75
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1ygo"]
+size = Vector2(18, 13)
 
 [sub_resource type="Animation" id="Animation_d0mh2"]
 length = 0.001
@@ -254,8 +253,8 @@ hframes = 4
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.625)
-shape = SubResource("CapsuleShape2D_ujpiq")
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_q1ygo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
