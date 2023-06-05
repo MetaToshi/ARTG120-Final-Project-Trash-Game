@@ -26,6 +26,8 @@ func _physics_process(_delta):
 		
 	move_and_slide()
 	for i in get_slide_collision_count():
+		var city = get_tree().get_first_node_in_group("city");
+		navigation_agent.target_position = Vector2(city.position.x,city.position.y)
 		pass#queue_free()
 		
 	var current_agent_position: Vector2 = global_position
