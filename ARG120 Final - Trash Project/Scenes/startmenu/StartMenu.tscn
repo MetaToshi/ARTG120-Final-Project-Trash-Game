@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjdmaj822eidr"]
+[gd_scene load_steps=5 format=3 uid="uid://bjdmaj822eidr"]
 
 [ext_resource type="Script" path="res://Scenes/startmenu/StartMenu.gd" id="1_nu5id"]
 [ext_resource type="Texture2D" uid="uid://dksgsdkq5ionm" path="res://Assets/Sprites/ScrollingCity/long dayscene background.png" id="2_de6er"]
 [ext_resource type="Script" path="res://Scenes/startmenu/titlescroll.gd" id="2_or34f"]
+[ext_resource type="Texture2D" uid="uid://bc2drcm65tqrt" path="res://Assets/Sprites/Title/disposable_logo.png" id="4_2uwet"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,10 +11,10 @@ anchor_left = 0.416
 anchor_top = 0.402
 anchor_right = 0.589
 anchor_bottom = 0.56
-offset_left = -798.72
-offset_top = -434.16
-offset_right = 789.12
-offset_bottom = 475.2
+offset_left = -1004.72
+offset_top = -475.16
+offset_right = 583.12
+offset_bottom = 434.2
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nu5id")
@@ -47,6 +48,7 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 top_level = true
 layout_mode = 1
 anchors_preset = -1
@@ -82,6 +84,11 @@ motion_mirroring = Vector2(2800, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(1148, 556)
 texture = ExtResource("2_de6er")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1044, 419)
+scale = Vector2(0.150263, 0.150263)
+texture = ExtResource("4_2uwet")
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
