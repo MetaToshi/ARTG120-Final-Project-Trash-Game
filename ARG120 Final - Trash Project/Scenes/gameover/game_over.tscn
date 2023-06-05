@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://4q3ouexsvh4k"]
+[gd_scene load_steps=4 format=3 uid="uid://4q3ouexsvh4k"]
 
 [ext_resource type="Script" path="res://Scenes/gameover/game_over.gd" id="1_p47dg"]
+[ext_resource type="Script" path="res://Scenes/startmenu/titlescroll.gd" id="2_4gtt3"]
+[ext_resource type="Texture2D" uid="uid://dksgsdkq5ionm" path="res://Assets/Sprites/ScrollingCity/long dayscene background.png" id="3_cksg4"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -17,12 +19,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_p47dg")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0.0862745, 0.619608)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -54,6 +50,19 @@ layout_mode = 2
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_4gtt3")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+show_behind_parent = true
+position = Vector2(-679, -134)
+scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2900, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1148, 556)
+texture = ExtResource("3_cksg4")
 
 [connection signal="pressed" from="MarginContainer/onclick" to="." method="_on_onclick_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7nmyekqcbi5c" path="res://Assets/Sprites/Enemies/120 - TrashMonster1-Sheet.png" id="2_quhaq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgrse"]
-radius = 8.0
+radius = 7.0
 height = 28.0
 
 [sub_resource type="Animation" id="Animation_qj1nh"]
