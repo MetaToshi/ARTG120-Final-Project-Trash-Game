@@ -32,7 +32,9 @@ layout_mode = 2
 top_level = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0.74902, 0.94902, 1)
+theme_override_colors/font_color = Color(0.780392, 0.54902, 0.392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 29
 text = "You got too overwhelmed with  
 the working conditions.
