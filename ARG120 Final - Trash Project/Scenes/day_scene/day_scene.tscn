@@ -171,8 +171,8 @@ motion_mirroring = Vector2(1950, 2667)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(520.977, 162.5)
-scale = Vector2(0.653939, 0.445833)
+position = Vector2(520.977, 79.4999)
+scale = Vector2(0.653939, 0.676389)
 texture = ExtResource("7_xdv4n")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -181,11 +181,41 @@ motion_mirroring = Vector2(500, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_repeat = 2
-position = Vector2(-2, 15)
-scale = Vector2(0.4, 0.4)
+position = Vector2(21, -47)
+scale = Vector2(0.670312, 0.646875)
 texture = ExtResource("8_1bybb")
 
 [node name="Speech" parent="ParallaxBackground/ParallaxLayer2/Sprite2D" instance=ExtResource("9_pxmps")]
+position = Vector2(0, -120)
+scale = Vector2(2.5, 2.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/Sprite2D"]
+texture_repeat = 2
+position = Vector2(56.541, 10.2029)
+scale = Vector2(0.817022, 0.836117)
+texture = ExtResource("8_1bybb")
+
+[node name="Speech" parent="ParallaxBackground/ParallaxLayer2/Sprite2D/Sprite2D" instance=ExtResource("9_pxmps")]
+position = Vector2(0, -120)
+scale = Vector2(2.5, 2.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/Sprite2D/Sprite2D"]
+texture_repeat = 2
+position = Vector2(-344.922, -12.2027)
+scale = Vector2(1.10297, 1.08674)
+texture = ExtResource("8_1bybb")
+
+[node name="Speech" parent="ParallaxBackground/ParallaxLayer2/Sprite2D/Sprite2D/Sprite2D" instance=ExtResource("9_pxmps")]
+position = Vector2(0, -120)
+scale = Vector2(2.5, 2.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/Sprite2D/Sprite2D/Sprite2D"]
+texture_repeat = 2
+position = Vector2(-233.435, 13.3224)
+scale = Vector2(0.817022, 0.836117)
+texture = ExtResource("8_1bybb")
+
+[node name="Speech" parent="ParallaxBackground/ParallaxLayer2/Sprite2D/Sprite2D/Sprite2D/Sprite2D" instance=ExtResource("9_pxmps")]
 position = Vector2(0, -120)
 scale = Vector2(2.5, 2.5)
 
