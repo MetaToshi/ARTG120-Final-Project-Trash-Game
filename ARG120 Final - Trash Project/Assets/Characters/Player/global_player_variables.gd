@@ -63,7 +63,7 @@ func RESET_TO_DEFAULT_VALUES():
 	can_capacity_cost = default_can_capacity_cost;
 	city_restore_cost = default_city_restore_cost;
 	enemy_decrease_cost = default_enemy_decrease_cost;
-
+	print("resetting values")
 	
 func load_on_night():
 	currently_available_cans = max_available_cans;

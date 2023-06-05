@@ -22,7 +22,6 @@ position = Vector2(113, 183)
 scale = Vector2(2, 2)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_bprjq")
 
 [node name="Shop" type="Control" parent="."]
@@ -165,7 +164,6 @@ offset_bottom = -229.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("6_xh1s8")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]

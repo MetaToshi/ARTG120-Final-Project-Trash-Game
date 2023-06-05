@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	pass
+	GlobalPlayerVariables.RESET_TO_DEFAULT_VALUES
 	
 	
 

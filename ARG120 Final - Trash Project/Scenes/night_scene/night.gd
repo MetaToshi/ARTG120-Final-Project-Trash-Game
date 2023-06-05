@@ -23,7 +23,8 @@ func _input(event):
 		#spawner()
 		#print(player.get_cans())
 
-
+func reset():
+	get_tree().reload_current_scene();
 #SPAWNER HAS BEEN MOVED TO BE INSIDE THE SCRIPT FOR THE PLAYER
 #func spawner():
 	#print("test")
